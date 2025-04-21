@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-soul-brown: 46, 31, 31;      /* #2E1F1F - Deep rich brown */
+    --color-tart-mint: 0, 168, 159;    /* #00A89F -  */
+    --color-butter-orange: 255, 166, 0;   /* #FFA600 - Warm butter */
+    --color-crust-brown: 90, 42, 12;      /* #5A2A0C - Rich crust */
+    
+    /* Background Variations */
+    --color-bg-primary: 46, 31, 31;      /* #2E1F1F */
+    --color-bg-secondary: 58, 44, 44;    /* #3A2C2C */
+    
+    /* Text Colors */
+    --color-text-primary: 255, 255, 255;  /* White */
+    --color-text-secondary: 209, 213, 219; /* Gray-300 */
+    --color-text-accent: 0, 168, 159;   /*  */
+  }
+
+  body {
+    @apply bg-[#2E1F1F] text-white antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .tart-gradient {
+    @apply bg-gradient-to-r from-[#5A2A0C] via-[#8E3200] to-[#A64B2A];
+  }
+  
+  .soul-gradient {
+    @apply bg-gradient-to-r from-[#00A89F] via-[#009B93] to-[#008E87];
+  }
+  
+  .butter-gradient {
+    @apply bg-gradient-to-r from-[#FFA600] via-[#FF7A00] to-[#FF5400];
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-[#00A89F]/10;
+  }
+  
+  .nav-link {
+    @apply hover:text-[#00A89F] transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-[#00A89F] text-[#2E1F1F] px-6 py-3 rounded-full font-bold 
+           hover:bg-opacity-90 transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-[#00A89F] focus:ring-opacity-50;
+  }
+  
+  .btn-secondary {
+    @apply border-2 border-[#00A89F] text-[#00A89F] px-6 py-3 rounded-full font-bold
+           hover:bg-[#00A89F] hover:text-[#2E1F1F] transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-[#00A89F] focus:ring-opacity-50;
+  }
+}
+
+/* Custom Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-[#2E1F1F];
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-[#00A89F] rounded-full;
+}
