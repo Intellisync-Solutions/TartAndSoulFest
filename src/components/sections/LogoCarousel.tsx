@@ -1,20 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Import sponsor logo images - commented out until images are available
-// import soulKitchenLogo from '../../assets/images/soul-kitchen-logo.jpeg';
-// import rhythmRecordsLogo from '../../assets/images/rhythm-records-logo.jpeg';
-// import sweetHeritageLogo from '../../assets/images/sweet-heritage-logo.jpeg';
 
 interface LogoCarouselProps {
   sponsors: Array<{
     id: number;
     name: string;
-    logo: string;
+    logo: string | { default: string };
   }>;
+  scrollSpeedSeconds?: number; // New optional prop
 }
 
-const LogoCarousel: React.FC<LogoCarouselProps> = ({ sponsors }) => {
+const LogoCarousel: React.FC<LogoCarouselProps> = ({ sponsors, scrollSpeedSeconds = 40 }) => { //lower # = faster scroll
+ 
   // Duplicate sponsors array for seamless loop
   const extendedSponsors = [...sponsors, ...sponsors, ...sponsors];
 
@@ -25,7 +23,12 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ sponsors }) => {
       <div className="absolute bottom-0 w-full h-px bg-gradient-to-r from-transparent via-tart-mint to-transparent opacity-20" />
 
       {/* Single scrolling row */}
-      <div className="flex animate-scroll-left">
+      <div
+        className="flex w-max"
+        style={{
+          animation: `scroll-left ${scrollSpeedSeconds}s linear infinite`
+        }}
+      >
         {extendedSponsors.map((sponsor, index) => (
           <motion.div
             key={`${sponsor.id}-${index}`}
@@ -34,18 +37,18 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ sponsors }) => {
             transition={{ duration: 0.3 }}
           >
             {/* Display logo image if available, otherwise fallback to sponsor name */}
-            {typeof sponsor.logo === "string" && sponsor.logo !== "placeholder-logo" ? (
-              <img
-                src={sponsor.logo}
-                alt={sponsor.name}
-                className="h-48 max-w-none object-contain drop-shadow-lg rounded-2xl mx-8"
-                loading="lazy"
-              />
-            ) : (
-              <div className="h-48 flex items-center justify-center text-gray-500 text-2xl mx-8">
-                {sponsor.name}
-              </div>
-            )}
+            {sponsor.logo ? (
+  <img
+    src={typeof sponsor.logo === "string" ? sponsor.logo : sponsor.logo?.default}
+    alt={sponsor.name}
+    className="h-48 max-w-none object-contain drop-shadow-lg rounded-2xl mx-8"
+    loading="lazy"
+  />
+) : (
+  <div className="h-48 flex items-center justify-center text-gray-500 text-2xl mx-8">
+    {sponsor.name}
+  </div>
+)}
           </motion.div>
         ))}
       </div>

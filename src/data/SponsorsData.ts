@@ -1,6 +1,12 @@
 // All sponsor-related data for the Sponsors page
 import { Users, Zap, ShieldCheck, Medal, HandHeart, Crown, Star, Sparkles, Coffee, Gift, } from 'lucide-react';
 import IntellisyncLogo from '../assets/images/logo.png';
+import SonsOfKentLogo from '../assets/images/sonsofkent.webp';
+import LPGraphicsLogo from '../assets/images/LPGraphics.png';
+import WTRLogo from '../assets/images/WTR.png';
+import DougTheFoodieLogo from '../assets/images/DougTheFoodie.png';
+import CKSXLogo from '../assets/images/CKSX.webp';
+import PlanetPrintLogo from '../assets/images/PlanetPrint.png';
 
 export const HIGHLIGHTS = [
   { icon: HandHeart, text: "Community Support" },
@@ -58,7 +64,7 @@ export const SPONSORS = [
     id: 1,
     name: 'Sons of Kent Brewery',
     tier: 'PLATINUM',
-    logo: 'placeholder-logo',
+    logo: SonsOfKentLogo,
     description:
       'A craft brewery producing unique beers inspired by local history and traditions, bringing an authentic taste to every event.',
     impact:
@@ -92,7 +98,7 @@ export const SPONSORS = [
     id: 3,
     name: 'WTR - With This Ring',
     tier: 'GOLD',
-    logo: 'placeholder-logo',
+    logo: WTRLogo,
     description:
       'Experts in crafting unforgettable wedding experiences with a personal touch and meticulous attention to detail.',
     impact:
@@ -109,7 +115,7 @@ export const SPONSORS = [
     id: 4,
     name: 'LPGraphics',
     tier: 'SILVER',
-    logo: 'placeholder-logo',
+    logo: LPGraphicsLogo,
     description:
       'Delivering cutting-edge graphic design and printing services that elevate brand identity and creative storytelling.',
     impact:
@@ -126,7 +132,7 @@ export const SPONSORS = [
     id: 5,
     name: 'Doug the Foodie',
     tier: 'BRONZE',
-    logo: 'placeholder-logo',
+    logo: DougTheFoodieLogo,
     description:
       'A celebrated local culinary influencer who shares authentic food reviews, recipes, and gastronomic adventures.',
     impact:
@@ -139,30 +145,64 @@ export const SPONSORS = [
     contactPerson: '',
     industry: '',
   },
+  {
+    id: 6,
+    name: 'CKSX 99.1 FM',
+    tier: 'SILVER',
+    logo: CKSXLogo,
+    description:
+      'Local radio station supporting community events and spreading the word about Tart & Soul Festival.',
+    impact:
+      'Provided live event coverage and promoted the festival across Chatham-Kent.',
+    location: 'Chatham, ON',
+    website: '',
+    testimonial: '',
+    yearsSponsor: 0,
+    initiatives: [],
+    contactPerson: '',
+    industry: 'Media',
+  },
+  {
+    id: 7,
+    name: 'Planet Print',
+    tier: 'BRONZE',
+    logo: PlanetPrintLogo,
+    description:
+      'Full-service print shop delivering high-quality materials for community events and businesses.',
+    impact:
+      'Printed banners, posters, and event signage for the festival.',
+    location: 'Chatham, ON',
+    website: '',
+    testimonial: '',
+    yearsSponsor: 0,
+    initiatives: [],
+    contactPerson: '',
+    industry: 'Printing',
+  },
 ];
 
 export const IMPACT_STATISTICS = [
   {
     icon: Users,
-    value: '10,000+',
+    value: '',
     label: 'Attendees',
     description: 'Celebrating a record-breaking turnout in 2024!'
   },
   {
     icon: Zap,
-    value: '50+',
+    value: '',
     label: 'Events',
     description: 'A packed schedule of performances, workshops, and tastings.'
   },
   {
     icon: ShieldCheck,
-    value: '$30,000+',
+    value: '',
     label: 'Funds Raised',
     description: 'Supporting local charities, artists, and community initiatives.'
   },
   {
     icon: Medal,
-    value: '25+',
+    value: '',
     label: 'Sponsors',
     description: 'A growing network of partners making a difference.'
   }

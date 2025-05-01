@@ -5,13 +5,13 @@ import { Heart, Users, Music, Utensils } from 'lucide-react';
 const IMPACT_STATS = [
   {
     icon: Users,
-    value: "2,000+",
+    value: "",
     label: "Community Members",
     description: "Bringing people together through food and music"
   },
   {
     icon: Utensils,
-    value: "25+",
+    value: "",
     label: "Local Bakers",
     description: "Supporting Black-owned businesses"
   },

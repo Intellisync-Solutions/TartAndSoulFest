@@ -101,7 +101,7 @@ const VendorSpotlight: React.FC<VendorSpotlightProps> = ({ vendor, isActive }) =
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Left Column - Vendor Story */}
           <div className="lg:col-span-1 order-2 lg:order-1">
-            <div className="bg-[#1F1413] p-6 rounded-2xl shadow-inner mb-6">
+            <div className="bg-[#503432] p-6 rounded-2xl shadow-inner mb-6">
               <h3 className="text-xl font-bold mb-4 flex items-center">
                 <Star className="mr-2 text-[#FFA600]" />
                 Our Story
@@ -134,7 +134,7 @@ const VendorSpotlight: React.FC<VendorSpotlightProps> = ({ vendor, isActive }) =
             </div>
             
             {vendor.awards && vendor.awards.length > 0 && (
-              <div className="bg-gradient-to-br from-[#2E1F1F] to-[#3A2C2C] p-0.5 rounded-2xl shadow-lg">
+              <div className="bg-gradient-to-br from-[#2E1F1F] to-[#514040] p-0.5 rounded-2xl shadow-lg">
                 <div className="bg-[#1F1413] p-6 rounded-2xl">
                   <h3 className="text-xl font-bold mb-4 flex items-center">
                     <Award className="mr-2 text-[#FFA600]" />
@@ -169,14 +169,14 @@ const VendorSpotlight: React.FC<VendorSpotlightProps> = ({ vendor, isActive }) =
             </h3>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {vendor.tarts.map((tart, idx) => (
+              {vendor.tarts.map((tart) => (
                 <motion.div
                   key={tart.name}
                   className="bg-gradient-to-br from-[#2E1F1F] to-[#3A2C2C] p-0.5 rounded-xl overflow-hidden group"
                   whileHover={{ y: -5, scale: 1.02 }}
                   transition={{ type: "spring", stiffness: 300, damping: 15 }}
                 >
-                  <div className="bg-[#1F1413] p-4 rounded-xl h-full flex flex-col">
+                  <div className="bg-[#4d3331] p-4 rounded-xl h-full flex flex-col">
                     <div className="flex justify-between items-start mb-2">
                       <h4 className="font-bold text-white flex items-center">
                         {tart.name}
@@ -209,7 +209,7 @@ const VendorSpotlight: React.FC<VendorSpotlightProps> = ({ vendor, isActive }) =
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         onClick={() => setSelectedTart(tart)}
-                        className="text-xs bg-[#3A2C2C] hover:bg-[#00A89F] text-[#00A89F] hover:text-[#1F1413] px-3 py-1 rounded-full transition-colors flex items-center"
+                        className="text-xs bg-[#514040] hover:bg-[#00A89F] text-[#00A89F] hover:text-[#1F1413] px-3 py-1 rounded-full transition-colors flex items-center"
                       >
                         Details
                         <ArrowRight size={12} className="ml-1" />

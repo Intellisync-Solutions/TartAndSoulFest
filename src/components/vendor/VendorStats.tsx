@@ -100,7 +100,7 @@ const VendorStats: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <VendorStat
           icon={Store}
-          value="35+"
+          value=""
           label="Local Vendors"
           description="Artisan bakers creating soul-infused tarts across Chatham-Kent"
           color="from-[#00A89F] to-[#008080]"
@@ -108,7 +108,7 @@ const VendorStats: React.FC = () => {
         />
         <VendorStat
           icon={Star}
-          value="120+"
+          value=""
           label="Signature Recipes"
           description="Unique butter tart creations blending Canadian and Soul food traditions"
           color="from-[#FFA600] to-[#FF7A00]"
@@ -116,7 +116,7 @@ const VendorStats: React.FC = () => {
         />
         <VendorStat
           icon={Award}
-          value="12"
+          value=""
           label="Award Winners"
           description="Nationally recognized bakers pushing culinary boundaries"
           color="from-[#8EF4B6] to-[#4CAF50]"
@@ -124,7 +124,7 @@ const VendorStats: React.FC = () => {
         />
         <VendorStat
           icon={Flag}
-          value="5"
+          value=""
           label="Local Regions"
           description="Representing the diverse communities of Chatham-Kent"
           color="from-[#F472B6] to-[#C026D3]"

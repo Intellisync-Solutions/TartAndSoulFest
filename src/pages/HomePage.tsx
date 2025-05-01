@@ -12,12 +12,6 @@ import Impact from '../components/sections/Impact';
 import LogoCarousel from '../components/sections/LogoCarousel';
 import GradientText from '../components/ui/GradientText';
 
-// Commented out until images are available
-// import tartAndSoulImage from '../assets/images/tart-and-soul.jpeg';
-// import festivalImage1 from '../assets/images/festival-1.jpeg';
-// import festivalImage2 from '../assets/images/festival-2.jpeg';
-// import festivalImage3 from '../assets/images/festival-3.jpeg';
-
 const HIGHLIGHTS = [
   {
     icon: Music,
@@ -33,35 +27,10 @@ const HIGHLIGHTS = [
   }
 ];
 
-import intellisyncLogo from "../assets/images/logo.png";
+//Images
 
-const SPONSORS = [
-  {
-    id: 1,
-    name: "Sons of Kent",
-    logo: "placeholder-logo", // Placeholder until image is available
-  },
-  {
-    id: 2,
-    name: "Intellisync Solutions",
-    logo: intellisyncLogo,
-  },
-  {
-    id: 3,
-    name: "LPGraphic Design&Print",
-    logo: "placeholder-logo", // Placeholder until image is available
-  },
-  {
-    id: 4,
-    name: "WTR - With This Ring",
-    logo: "placeholder-logo", // Placeholder until image is available
-  },
-{
-    id: 5,
-    name: "Doug the Foodie",
-    logo: "placeholder-logo", // Placeholder until image is available
-  }
-];
+
+import { SPONSORS } from '../data/SponsorsData';
 
 // Festival highlights data
 const FESTIVAL_HIGHLIGHTS = [
@@ -80,7 +49,7 @@ const FESTIVAL_HIGHLIGHTS = [
     icon: Music,
     stats: [
       { value: "1", label: "Live Stage" },
-      { value: "20+", label: "Performances" }
+      { value: "5", label: "Performances" }
     ]
   },
   {
@@ -88,8 +57,8 @@ const FESTIVAL_HIGHLIGHTS = [
     description: "Watch as amateur and professional bakers go head-to-head in our signature butter tart competition, blending traditional recipes with soul food influences.",
     icon: CakeSlice,
     stats: [
-      { value: "100+", label: "Entries" },
-      { value: "5", label: "Categories" }
+      { value: "", label: "Entries" },
+      { value: "", label: "Categories" }
     ]
   },
   {
@@ -97,8 +66,8 @@ const FESTIVAL_HIGHLIGHTS = [
     description: "Experience the warmth of our community as we come together to celebrate cultural heritage, support local tartisans, and create lasting connections with our community.",
     icon: Users,
     stats: [
-      { value: "5,000+", label: "Attendees" },
-      { value: "15+", label: "Community Partners" }
+      { value: "", label: "Attendees" },
+      { value: "", label: "Community Partners" }
     ]
   }
 ];
@@ -288,6 +257,7 @@ const HomePage = () => {
               <GradientText variant="accent">Tart & Soul Fest Event Sponsors</GradientText>
             </h2>
           </motion.div>
+
         </div>
         <LogoCarousel sponsors={SPONSORS} />
       </section>

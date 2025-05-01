@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Calendar, Heart, CakeSlice, Award, ExternalLink, ChevronRight } from 'lucide-react';
+import { MapPin, Calendar, CakeSlice, Award, ExternalLink, ChevronRight } from 'lucide-react';
 import GradientText from '../ui/GradientText';
 
 interface TartVariety {

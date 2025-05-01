@@ -115,9 +115,9 @@ const RecipesPage = () => {
             { icon: ICON_MAP["leaf"], text: "Dietary Options" }
           ]}
         />
-        <div className="min-h-screen bg-[#2E1F1F] pt-20">
-  <GradientText className="block text-4xl md:text-6xl font-extrabold text-center mb-4">
-    Tart & Soul Recipes
+        <div className="min-h-screen bg-[#432f2f] pt-20">
+  <GradientText className="block text-4xl md:text-6xl font-extrabold pl-48 text-center mb-4">
+   Coming Soon
   </GradientText>
         <div className="container mx-auto px-4 py-12">
           

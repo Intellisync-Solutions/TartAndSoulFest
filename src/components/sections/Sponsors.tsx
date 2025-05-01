@@ -2,6 +2,14 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown } from 'lucide-react';
 
+import intellisyncLogo from '../../assets/images/logo.png';
+import lpGraphicsLogo from '../../assets/images/LPGraphics.png';
+import sonsOfKentLogo from '../../assets/images/sonsofkent.webp';
+import wtrLogo from '../../assets/images/WTR.png';
+import dougTheFoodieLogo from '../../assets/images/DougTheFoodie.png';
+import cksxLogo from '../../assets/images/CKSX.webp';
+import planetPrintLogo from '../../assets/images/PlanetPrint.png';
+
 type SponsorLevel = {
   tier: string;
   description: string;
@@ -18,9 +26,14 @@ const sponsorLevels: SponsorLevel[] = [
     description: 'Our highest tier partners who help keep the soul alive and thriving.',
     sponsors: [
       {
-        name: 'Soul Kitchen',
-        logo: 'https://images.unsplash.com/photo-1581235720704-06d3acfcb36f?w=500&q=80',
-        description: 'Bringing authentic flavors to our community since 2010.',
+        name: 'Sons of Kent',
+        logo: sonsOfKentLogo,
+        description: 'Proud local brewery supporting the festival and community spirit.',
+      },
+      {
+        name: 'Intellisync Solutions',
+        logo: intellisyncLogo,
+        description: 'Technology partner powering our digital experience.',
       },
     ],
   },
@@ -29,9 +42,14 @@ const sponsorLevels: SponsorLevel[] = [
     description: 'Partners who add their unique beat to our community.',
     sponsors: [
       {
-        name: 'Music Haven',
-        logo: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=500&q=80',
-        description: 'Supporting local musicians and artists.',
+        name: 'LPGraphic Design&Print',
+        logo: lpGraphicsLogo,
+        description: 'Design and print partner for all festival branding.',
+      },
+      {
+        name: 'WTR - With This Ring',
+        logo: wtrLogo,
+        description: 'Bringing creative flair and support to our events.',
       },
     ],
   },
@@ -40,9 +58,19 @@ const sponsorLevels: SponsorLevel[] = [
     description: 'Friends who help us create perfect harmony in our events.',
     sponsors: [
       {
-        name: 'Community First',
-        logo: 'https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?w=500&q=80',
-        description: 'Building stronger communities through arts and culture.',
+        name: 'Doug the Foodie',
+        logo: dougTheFoodieLogo,
+        description: 'Food influencer sharing the soul of our festival with the world.',
+      },
+      {
+        name: 'CKSX 99.1 FM',
+        logo: cksxLogo,
+        description: 'Local radio station supporting community events.',
+      },
+      {
+        name: 'Planet Print',
+        logo: planetPrintLogo,
+        description: 'Full-service print shop for community events.',
       },
     ],
   },
@@ -50,6 +78,9 @@ const sponsorLevels: SponsorLevel[] = [
 
 const SponsorCard = ({ name, tier, logo }: { name: string; tier: string; logo: string }) => {
   const [isFlipped, setIsFlipped] = React.useState(false);
+
+  // Debug: Log sponsor name and logo path
+  console.log('SponsorCard logo debug:', { name, logo });
 
   return (
     <motion.div
@@ -67,7 +98,14 @@ const SponsorCard = ({ name, tier, logo }: { name: string; tier: string; logo: s
         <img
           src={logo}
           alt={name}
-          className="w-full h-full object-contain"
+          style={{
+            border: '5px solid red',
+            background: 'yellow',
+            width: '100px',
+            height: '100px',
+            zIndex: 9999,
+            position: 'relative'
+          }}
         />
       </div>
       <div
@@ -86,6 +124,9 @@ const SponsorCard = ({ name, tier, logo }: { name: string; tier: string; logo: s
 
 const SponsorTier = ({ level }: { level: SponsorLevel }) => {
   const [isOpen, setIsOpen] = React.useState(false);
+
+  // Debug: Log sponsors array for this tier
+  console.log('SponsorTier sponsors debug:', level.tier, level.sponsors);
 
   return (
     <motion.div
@@ -121,22 +162,12 @@ const SponsorTier = ({ level }: { level: SponsorLevel }) => {
       >
         <div className="grid md:grid-cols-2 gap-6 p-6 bg-[#3A2C2C] rounded-b-lg">
           {level.sponsors.map((sponsor) => (
-            <motion.div
+            <SponsorCard
               key={sponsor.name}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="bg-[#2E1F1F] p-6 rounded-lg"
-            >
-              <div className="h-40 mb-4">
-                <img
-                  src={sponsor.logo}
-                  alt={sponsor.name}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <h4 className="text-xl font-bold mb-2">{sponsor.name}</h4>
-              <p className="text-gray-300">{sponsor.description}</p>
-            </motion.div>
+              name={sponsor.name}
+              tier={level.tier}
+              logo={sponsor.logo}
+            />
           ))}
         </div>
       </motion.div>
