@@ -1,7 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import GradientText from './GradientText';
-// import logo from '../../assets/images/tart-and-soul.jpeg';
+import HomeHeroTarts from '../../assets/images/HomeHeroTarts.png';
+
 
 interface PageHeroProps {
   variant: 'home' | 'about' | 'events' | 'sponsors' | 'vendors' | 'history' | 'recipes';
@@ -18,14 +19,17 @@ interface PageHeroProps {
   extraContent?: React.ReactNode;
   cta?: {
     label: string;
-    onClick: () => void;
     icon?: React.ElementType;
-    ariaLabel?: string;
+    onClick: () => void;
   };
   backgroundOverlay?: React.ReactNode;
   decorations?: React.ReactNode;
   children?: React.ReactNode;
 }
+
+// Set default props for the PageHero component
+const defaultForegroundImage = HomeHeroTarts;
+const defaultForegroundImageAlt = 'Tarts and Soul Hero Image';
 
 type GradientVariant = "accent" | "secondary" | "primary";
 
@@ -88,11 +92,11 @@ const PageHero: React.FC<PageHeroProps> = ({
   subtitle,
   image,
   alt = '',
-  foregroundImage,
-  foregroundImageAlt = '',
+  foregroundImage = defaultForegroundImage,
+  foregroundImageAlt = defaultForegroundImageAlt,
   highlights,
   extraContent,
-  cta,
+  // cta,
   backgroundOverlay,
   decorations,
   children,
@@ -248,7 +252,7 @@ const PageHero: React.FC<PageHeroProps> = ({
           )}
 
           {/* CTA Button if provided */}
-          {cta && (
+          {/* {cta && (
             <motion.button
               onClick={cta.onClick}
               className="mt-6 px-8 py-4 rounded-full bg-tart-mint text-[#2E1F1F] font-bold shadow-xl flex items-center gap-3 text-lg hover:bg-[#FFA600] transition-colors focus:outline-none focus:ring-4 focus:ring-tart-mint/40"
@@ -259,15 +263,15 @@ const PageHero: React.FC<PageHeroProps> = ({
               {cta.icon && <cta.icon className="mr-2" size={24} />}
               {cta.label}
             </motion.button>
-          )}
+          )} */}
 
           {/* Extra content and children */}
           {extraContent}
           {children}
           </motion.div>
           
-          {/* Foreground image on the right side */}
-          {foregroundImage && variant === 'home' && (
+          {/* Foreground image on the right side (now on all pages) */}
+          {foregroundImage && (
             <motion.div 
               className="hidden md:block md:w-1/2 relative z-10"
               initial={{ opacity: 0, x: 20 }}

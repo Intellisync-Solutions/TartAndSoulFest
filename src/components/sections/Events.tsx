@@ -35,7 +35,7 @@ const Events = () => {
           </motion.a>
           {', '}
           <motion.a
-            href="#"
+            href="https://www.texasking.ca/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{
@@ -147,33 +147,19 @@ const Events = () => {
               </div>
             </div>
           </motion.div>
-              {/* <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-               className="bg-[#00A89F] text-[#2E1F1F] px-6 py-2 rounded-full font-bold w-full hover:bg-opacity-90 transition-colors"
-              >
-                Learn More
-              </motion.button> */}
-           
-         
         </div>
         
         {/* ButterTartSoul Image below the cards */}
-        <motion.div
-          className="-mt-16 flex justify-start pl-4 md:pl-12"
+        <motion.img
+          src={ButterTartSoulImage}
+          alt="Butter Tart Soul Festival"
+          className="mx-auto mt-16 w-96 h-auto rounded-lg shadow-xl"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ delay: 0.4 }}
-        >
-          <motion.img
-            src={ButterTartSoulImage}
-            alt="Butter Tart Soul Festival"
-            className="max-w-full h-auto max-h-[400px] rounded-xl shadow-2xl"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          />
-        </motion.div>
+          whileHover={{ scale: 1.02 }}
+          transition={{ duration: 0.3 }}
+        />
      </div>
     </section>
   );

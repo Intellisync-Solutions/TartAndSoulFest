@@ -28,8 +28,6 @@ const HIGHLIGHTS = [
   }
 ];
 
-//Images
-import HomeHeroTarts from '../assets/images/HomeHeroTarts.png';
 
 import { SPONSORS } from '../data/SponsorsData';
 
@@ -164,7 +162,6 @@ const HomePage = () => {
           subtitle="Join us in celebrating Black culture, soul music, and the sweetest butter tarts in town."
           highlights={HIGHLIGHTS}
           image="/images/TartSoulFest3.png"
-          foregroundImage={HomeHeroTarts}
           foregroundImageAlt="Delicious butter tarts from Tart & Soul Festival"
         />
       </motion.div>

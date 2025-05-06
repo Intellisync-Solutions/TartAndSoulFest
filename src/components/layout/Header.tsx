@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import {
   Menu,
   X,
-  Music2,
   Home,
   Info,
   Calendar,
@@ -14,6 +13,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '../components/ui/tooltip';
 // import logo from '../../assets/images/tart-and-soul.jpeg';
 
 const Header = () => {
@@ -21,20 +21,21 @@ const Header = () => {
   const location = useLocation();
 
   const menuItems = [
-    { name: 'Home', href: '/', icon: Home },
-    { name: 'About', href: '/about', icon: Info },
-    { name: 'Events', href: '/events', icon: Calendar },
-    { name: 'Sponsors', href: '/sponsors', icon: Landmark },
-    { name: 'Vendors', href: '/vendors', icon: Store },
-    { name: 'Recipes', href: '/recipes', icon: BookOpen },
-    { name: 'History', href: '/history', icon: History },
-    { name: 'Contact', href: '/contact', icon: Mail },
+    { href: 'Home', icon: Home },
+    { href: 'About', icon: Info },
+    { href: 'Events', icon: Calendar },
+    { href: 'Sponsors', icon: Landmark },
+    { href: 'Vendors', icon: Store },
+    { href: 'Recipes', icon: BookOpen },
+    { href: 'History', icon: History },
+    { href: 'Contact', icon: Mail },
   ];
 
   return (
-    <header className="fixed w-full bg-[#2E1F1F] text-white z-50">
-      <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-        <motion.div
+    <TooltipProvider>
+      <header className="fixed w-full bg-[#2E1F1F] text-white z-50">
+        <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
+          <motion.div
           initial={{ opacity: 0, x: -40, rotate: -10 }}
           animate={{ opacity: 1, x: 0, rotate: 0 }}
           transition={{ type: 'spring', stiffness: 120, damping: 10 }}
@@ -42,14 +43,17 @@ const Header = () => {
         >
           <Link to="/" className="flex items-center space-x-2 group">
             <motion.div
-              className="h-12 w-12 rounded-full bg-[#2E1F1F] p-1 shadow-lg"
+              className="h-12 w-12 rounded-full bg-[#2E1F1F] p-1 shadow-lg flex items-center justify-center overflow-hidden"
               whileHover={{ scale: 1.15, rotate: 10 }}
               whileTap={{ scale: 0.95, rotate: -10 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              {/* Logo image commented out for now */}
-              {/* <img src={logo} alt="Tart & Soul" className="h-full w-full object-contain" /> */}
-              <Music2 className="h-full w-full text-[#00A89F] drop-shadow-lg transition-colors duration-300 group-hover:text-white" />
+              <img
+                src="/Favicon.png"
+                alt="Tart & Soul logo"
+                className="h-full w-full object-cover rounded-full"
+                draggable="false"
+              />
             </motion.div>
             <motion.span
               className="text-2xl font-bold"
@@ -64,25 +68,25 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex space-x-6">
-          {menuItems.map((item, idx) => {
+          {menuItems.map((item) => {
             const Icon = item.icon;
             return (
-              <motion.div
-                key={item.name}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35 + idx * 0.06 }}
-                whileHover={{ scale: 1.13, rotate: 2 }}
-                className="flex items-center"
-              >
+              <div key={item.href} className="relative flex flex-col items-center">
                 <Link
                   to={item.href}
-                  className={`flex items-center space-x-1 nav-link transition-colors duration-300 ${location.pathname === item.href ? 'text-[#00A89F]' : ''}`}
+                  className={`group p-2 rounded-full hover:bg-[#3d2828] transition-colors duration-200 ${location.pathname === item.href ? 'text-yellow-400' : ''}`}
+                  aria-label={item.href}
                 >
-                  <Icon className="w-5 h-5 mr-1 transition-colors duration-300 group-hover:text-[#00A89F]" />
-                  <span>{item.name}</span>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Icon className="h-7 w-7" />
+                    </TooltipTrigger>
+                    <TooltipContent side="top" align="center">
+                      {item.href}
+                    </TooltipContent>
+                  </Tooltip>
                 </Link>
-              </motion.div>
+              </div>
             );
           })}
         </div>
@@ -137,7 +141,7 @@ const Header = () => {
                 const Icon = item.icon;
                 return (
                   <motion.div
-                    key={item.name}
+                    key={item.href}
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.15 + idx * 0.06 }}
@@ -149,7 +153,7 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <Icon className="w-5 h-5 mr-1 transition-colors duration-300 group-hover:text-[#00A89F]" />
-                      <span>{item.name}</span>
+                      <span>{item.href}</span>
                     </Link>
                   </motion.div>
                 );
@@ -159,7 +163,8 @@ const Header = () => {
         )}
       </AnimatePresence>
     </header>
+  </TooltipProvider>
   );
-};
+}
 
 export default Header;
