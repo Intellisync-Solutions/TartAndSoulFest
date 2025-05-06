@@ -8,7 +8,6 @@ import DougTheFoodieLogo from '../assets/images/DougTheFoodie.png';
 import CKSXLogo from '../assets/images/CKSX.webp';
 import PlanetPrintLogo from '../assets/images/PlanetPrint.png';
 import AdanaLawLogo from '../assets/images/AdanaLaw.png';
-import KitchenetteLogo from "../assets/images/Kitchenette.jpg";
 import OSWLogo from "../assets/images/OSW.png";
 
 export const HIGHLIGHTS = [
@@ -201,24 +200,7 @@ export const SPONSORS = [
     industry: 'Legal',
 
   },
-  {
-    id: 9,
-    name: 'Kitchenette',
-    tier: 'BRONZE',
-    logo: KitchenetteLogo,
-    description:
-      'Full-service print shop delivering high-quality materials for community events and businesses.',
-    impact:
-      'Printed banners, posters, and event signage for the festival.',
-    location: 'Chatham, ON',
-    website: '',
-    testimonial: '',
-    yearsSponsor: 0,
-    initiatives: [],
-    contactPerson: '',
-    industry: 'Food',
-
-  },
+ 
   {
     id: 10,
     name: 'OSW',

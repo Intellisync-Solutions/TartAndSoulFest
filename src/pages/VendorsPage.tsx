@@ -11,6 +11,7 @@ import VendorFilter from '../components/vendor/VendorFilter';
 import VendorStats from '../components/vendor/VendorStats';
 import PageHero from '../components/ui/PageHero';
 import GradientText from '../components/ui/GradientText';
+import FoodVendorTrucksCarousel from '../components/sections/FoodVendorTrucksCarousel';
 
 // Types for vendor data
 interface TartVariety {
@@ -522,7 +523,10 @@ const VendorsPage = () => {
           )}
         </AnimatePresence>
       </div>
-      
+
+      {/* Food Vendor Trucks Infinite Carousel */}
+      <FoodVendorTrucksCarousel />
+
       {/* Scroll to Top Button */}
       <ScrollToTopButton />
     </div>

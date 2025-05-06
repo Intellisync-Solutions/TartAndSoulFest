@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Music, Star, Heart, Calendar, MapPin, Clock, ChevronDown, Utensils, Users, ArrowRight, CakeSlice } from 'lucide-react';
+import { Music, Star, Heart, Calendar, MapPin, Clock, Utensils, Users, CakeSlice } from 'lucide-react'; // re-import ArrowRight and ChevronDown when ready to use the "show less/more" button
 
 // Components
 import PageHero from '../components/ui/PageHero';
@@ -11,6 +11,7 @@ import FeaturedTarts from '../components/sections/FeaturedTarts';
 import Impact from '../components/sections/Impact';
 import LogoCarousel from '../components/sections/LogoCarousel';
 import GradientText from '../components/ui/GradientText';
+import Newsletter from '../components/sections/Newsletter';
 
 const HIGHLIGHTS = [
   {
@@ -28,7 +29,7 @@ const HIGHLIGHTS = [
 ];
 
 //Images
-
+import HomeHeroTarts from '../assets/images/HomeHeroTarts.png';
 
 import { SPONSORS } from '../data/SponsorsData';
 
@@ -39,8 +40,8 @@ const FESTIVAL_HIGHLIGHTS = [
     description: "Discover the rich flavors of authentic soul food, from classic comfort dishes to innovative culinary creations that blend Canadian and Southern traditions.",
     icon: Utensils,
     stats: [
-      { value: "25+", label: "Food Vendors" },
-      { value: "50+", label: "Unique Dishes" }
+      { value: "1", label: "Food Vendors" },//TODO: Add stats
+      { value: "5", label: "Unique Dishes" }//TODO: Add stats
     ]
   },
   {
@@ -49,7 +50,7 @@ const FESTIVAL_HIGHLIGHTS = [
     icon: Music,
     stats: [
       { value: "1", label: "Live Stage" },
-      { value: "5", label: "Performances" }
+      { value: "2", label: "Performances" }
     ]
   },
   {
@@ -116,7 +117,7 @@ const HomePage = () => {
   });
   
   const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [highlightExpanded, setHighlightExpanded] = useState<number | null>(null);
+  // const [highlightExpanded, setHighlightExpanded] = useState<number | null>(null);
   
   // Calculate time remaining until next event
   useEffect(() => {
@@ -163,6 +164,8 @@ const HomePage = () => {
           subtitle="Join us in celebrating Black culture, soul music, and the sweetest butter tarts in town."
           highlights={HIGHLIGHTS}
           image="/images/TartSoulFest3.png"
+          foregroundImage={HomeHeroTarts}
+          foregroundImageAlt="Delicious butter tarts from Tart & Soul Festival"
         />
       </motion.div>
       
@@ -315,7 +318,7 @@ const HomePage = () => {
                             </div>
                           ))}
                           
-                          <motion.button
+                          {/* <motion.button // "uncomment this section. it is for the show more dropdown"
                             onClick={() => setHighlightExpanded(highlightExpanded === index ? null : index)}
                             className="ml-auto text-sm text-tart-mint flex items-center"
                             whileHover={{ scale: 1.05 }}
@@ -326,10 +329,10 @@ const HomePage = () => {
                               className={`ml-1 transition-transform ${highlightExpanded === index ? "rotate-180" : ""}`} 
                               size={16} 
                             />
-                          </motion.button>
+                          </motion.button> */}
                         </div>
                         
-                        <AnimatePresence>
+                        {/* <AnimatePresence>
                           {highlightExpanded === index && (
                             <motion.div
                               initial={{ height: 0, opacity: 0 }}
@@ -340,7 +343,7 @@ const HomePage = () => {
                               <p className="text-gray-300 text-sm">
                                 Join us for this incredible experience at the Tart & Soul Festival. 
                                 Our {highlight.title.toLowerCase()} is one of the highlights that makes
-                                our festival unique and memorable for all attendees.
+                                our festival unique and memorable for all attendees. Music brought to you from Texas King & Journeymen Of soul.
                               </p>
                               <div className="mt-4 flex justify-end">
                                 <motion.button
@@ -354,7 +357,7 @@ const HomePage = () => {
                               </div>
                             </motion.div>
                           )}
-                        </AnimatePresence>
+                        </AnimatePresence> */}
                       </div>
                     </div>
                   </div>
@@ -511,49 +514,7 @@ const HomePage = () => {
         <Impact />
         
         {/* Newsletter Signup */}
-                
-        <section className="py-20 bg-[#2E1F1F] relative overflow-hidden">
-           
-          <div className="container mx-auto px-4">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="bg-gradient-to-r from-[#3A2C2C] to-[#2E1F1F] rounded-xl overflow-hidden p-1"
-            >
-              <div className="bg-[#2E1F1F] rounded-xl p-8 md:p-12 relative">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-tart-mint/5 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#FFA600]/5 rounded-full blur-2xl"></div>
-                
-                <div className="text-center max-w-2xl mx-auto relative z-10">
-                  <h2 className="text-3xl font-bold mb-4">
-                     {/* <div className="inline-block bg-[#FFA600]/20 text-[#FFA600] px-3 py-1 rounded-full text-sm font-medium mb-4">
-                    Coming Soon 
-                  </div> */}
-                    <GradientText variant="primary">Newsletter Coming Soon</GradientText>
-                  </h2>
-                  <p className="text-gray-300 mb-8">
-                    Sign up for our newsletter to receive updates on upcoming events, special announcements, and exclusive festival content.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-                      className="flex-1 px-6 py-3 rounded-full bg-[#3A2C2C] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-tart-mint"
-                    />
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-tart-mint text-[#2E1F1F] px-8 py-3 rounded-full font-bold"
-                    >
-                     Coming Soon
-                    </motion.button>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </section>
+        <Newsletter />
       </div>
       <ScrollToTopButton />
     </>

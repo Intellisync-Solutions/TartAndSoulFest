@@ -2,13 +2,15 @@
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Clock } from 'lucide-react';
 import JourneymenOfSoulImage from '../../assets/images/JourneymenOfSoul.jpg';
+import ButterTartSoulImage from '../../assets/images/ButterTartSoul.png';
+import TexasKingImage from '../../assets/images/TexasKing.png';
 
 const Events = () => {
   const events = [
     {
       title: 'Tart & Soul Festival',
       date: 'June 28, 2025',
-      time: '11:00 PM - 8:00 PM',
+      time: '11:00 AM - 8:00 PM',
       location: 'Sons of Kent',
       music: (
         <motion.span
@@ -31,11 +33,29 @@ const Events = () => {
           >
             Journeyman of Soul
           </motion.a>
+          {', '}
+          <motion.a
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{
+              color: "#7FFFD4", // tart-mint accent
+              textShadow: "0px 2px 8px #7FFFD4",
+              scale: 1.12,
+            }}
+            transition={{ type: "spring", stiffness: 300, damping: 15 }}
+            className="font-semibold underline underline-offset-4 decoration-tart-mint"
+            style={{ display: "inline-block" }}
+          >
+            Texas King
+          </motion.a>
         </motion.span>
       ),
       description:
         'Join us for a day of soul food, music, and community celebration.',
     },
+
+    //For Future Events
     // {
     //   title: 'Tart Making Workshop',
     //   date: 'September 22, 2025',
@@ -100,21 +120,32 @@ const Events = () => {
             ))}
           </div>
           
-          {/* Live Band Image Container - Completely Separate */}
-          <motion.div 
-            className="md:col-span-1 overflow-hidden rounded-lg flex items-center justify-center"
+          {/* Live Band Images Card - Slightly Lighter Than Background */}
+          <motion.div
+            className="md:col-span-1"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <motion.img 
-              src={JourneymenOfSoulImage} 
-              alt="Journeymen of Soul" 
-              className="w-full h-auto max-h-[500px] object-cover rounded-lg shadow-xl"
-              whileHover={{ scale: 1.03 }}
-              transition={{ duration: 0.3 }}
-            />
+            <div className="bg-[#3A2C2C] p-6 rounded-xl shadow-xl flex flex-col md:flex-row items-center justify-center gap-6">
+              <motion.img 
+                src={JourneymenOfSoulImage} 
+                alt="Journeymen of Soul" 
+                className="w-full md:w-1/2 h-auto max-h-[320px] object-cover rounded-lg shadow-xl"
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+              />
+              <div className="w-full md:w-1/2 flex items-center justify-center bg-[#4A3C3C] p-4 rounded-lg">
+                <motion.img 
+                  src={TexasKingImage} 
+                  alt="Texas King" 
+                  className="w-full h-auto max-h-[320px] object-cover rounded-lg shadow-xl"
+                  whileHover={{ scale: 1.03 }}
+                  transition={{ duration: 0.3 }}
+                />
+              </div>
+            </div>
           </motion.div>
               {/* <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -126,6 +157,23 @@ const Events = () => {
            
          
         </div>
+        
+        {/* ButterTartSoul Image below the cards */}
+        <motion.div
+          className="-mt-16 flex justify-start pl-4 md:pl-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.4 }}
+        >
+          <motion.img
+            src={ButterTartSoulImage}
+            alt="Butter Tart Soul Festival"
+            className="max-w-full h-auto max-h-[400px] rounded-xl shadow-2xl"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+          />
+        </motion.div>
      </div>
     </section>
   );

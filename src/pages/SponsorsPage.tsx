@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Crown, Sparkles, Coffee, Gift, BadgeCheck, Rocket, Medal, Users, Globe, 
+  Crown, Sparkles, Coffee, Gift, BadgeCheck,  Medal, Users, Globe, 
 } from 'lucide-react';
 
 import PageHero from '../components/ui/PageHero';
@@ -19,7 +19,7 @@ import SponsorCard from '../components/sections/SponsorCard';
 import TestimonialCard from '../components/sections/TestimonialCard';
 
 import GradientText from '../components/ui/GradientText';
-
+import Newsletter from '../components/sections/Newsletter';
 
 
 
@@ -438,49 +438,7 @@ const SponsorsPage = () => {
       </section>
       
       {/* Newsletter Section */}
-      <section className="py-16 bg-[#3A2C2C] relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-gradient-to-r from-[#2E1F1F] to-[#3A2C2C] p-1 rounded-xl"
-          >
-            <div className="bg-[#2E1F1F] rounded-xl p-8 md:p-12 relative">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-tart-mint/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-[#FFA600]/5 rounded-full blur-2xl translate-y-1/2 -translate-x-1/3"></div>
-              
-              <div className="max-w-lg mx-auto text-center relative z-10">
-                <Rocket className="w-12 h-12 mx-auto mb-4 text-tart-mint" />
-                <div className="inline-block bg-[#FFA600]/20 text-[#FFA600] px-3 py-1 rounded-full text-sm font-medium mb-4">
-                  Coming Soon
-                </div>
-                <h3 className="text-3xl font-bold mb-4">
-                  <GradientText variant="secondary">Stay Informed</GradientText>
-                </h3>
-                <p className="text-gray-300 mb-8">
-                  Subscribe to our sponsor newsletter for updates on opportunities, 
-                  upcoming events, and success stories from our sponsor community.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <input
-                    type="email"
-                    placeholder="Your email address"
-                    className="flex-1 px-6 py-3 rounded-full bg-[#3A2C2C] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-tart-mint"
-                  />
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-tart-mint text-[#2E1F1F] px-6 py-3 rounded-full font-bold"
-                  >
-                    Subscribe
-                  </motion.button>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <Newsletter />
       <ScrollToTopButton />
     </motion.div>
   );

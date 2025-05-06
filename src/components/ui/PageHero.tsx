@@ -9,6 +9,8 @@ interface PageHeroProps {
   subtitle: string;
   image: string;
   alt?: string;
+  foregroundImage?: string;
+  foregroundImageAlt?: string;
   highlights?: Array<{
     icon: React.ElementType;
     text: string;
@@ -86,6 +88,8 @@ const PageHero: React.FC<PageHeroProps> = ({
   subtitle,
   image,
   alt = '',
+  foregroundImage,
+  foregroundImageAlt = '',
   highlights,
   extraContent,
   cta,
@@ -172,20 +176,21 @@ const PageHero: React.FC<PageHeroProps> = ({
 
       {/* Content */}
       <div className="container mx-auto px-8 py-24 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className={`max-w-4xl ${
-            variant === 'home'
-              ? 'ml-8 md:ml-16 py-16'
-              : variant === 'about' || variant === 'events'
-              ? 'ml-8 md:ml-16 py-16'
-              : variant === 'recipes'
-              ? 'mx-auto py-20 text-center'
-              : 'mx-auto py-16'
-          }`}
-        >
+        <div className="flex flex-col md:flex-row items-center justify-between">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className={`max-w-4xl ${
+              variant === 'home'
+                ? 'ml-8 md:ml-0 py-16 md:w-1/2'
+                : variant === 'about' || variant === 'events'
+                ? 'ml-8 md:ml-0 py-16'
+                : variant === 'recipes'
+                ? 'mx-auto py-20 text-center'
+                : 'mx-auto py-16'
+            }`}
+          >
           <h1 className={`text-6xl md:text-7xl font-bold mb-12 leading-relaxed ${
             variant === 'home'
               ? 'text-left'
@@ -259,7 +264,24 @@ const PageHero: React.FC<PageHeroProps> = ({
           {/* Extra content and children */}
           {extraContent}
           {children}
-        </motion.div>
+          </motion.div>
+          
+          {/* Foreground image on the right side */}
+          {foregroundImage && variant === 'home' && (
+            <motion.div 
+              className="hidden md:block md:w-1/2 relative z-10"
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <img 
+                src={foregroundImage} 
+                alt={foregroundImageAlt || 'Hero image'} 
+                className="max-h-[500px] object-contain drop-shadow-2xl"
+              />
+            </motion.div>
+          )}
+        </div>
       </div>
 
       {/* Decorations prop for custom floating icons, confetti, etc. */}

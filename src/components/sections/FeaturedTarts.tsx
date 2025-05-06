@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Star, Award } from 'lucide-react';
 
+// Image imports
+import FeaturedTartsImage from '../../assets/images/FeaturedTarts.png';
+
 // Local image imports - commented out until images are available
 // import soulButterClassic from '../../assets/images/soul-butter-classic.jpeg';
 // import sweetPotatoDream from '../../assets/images/sweet-potato-dream.jpeg';
@@ -38,6 +41,20 @@ const FeaturedTarts = () => {
   return (
     <section className="py-20 bg-[#3A2C2C]">
       <div className="container mx-auto px-4">
+        {/* Featured Tarts Image at the top */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center mb-12"
+        >
+          <img 
+            src={FeaturedTartsImage} 
+            alt="Featured Tarts Collection" 
+            className="rounded-xl max-h-[300px] object-contain drop-shadow-2xl"
+          />
+        </motion.div>
+        
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

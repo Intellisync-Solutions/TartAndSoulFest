@@ -12,7 +12,7 @@ export const SPONSOR_TESTIMONIALS = [
     quote:
       "Sponsoring the Tart & Soul Festival allowed us to give back to our community while connecting with new customers and partners. The exposure was invaluable!",
     name: "",
-    role: "Brewmaster, Sons of Kent Brewery",
+    role: "Doug Hunter, Sons of Kent Brewery",
     logo: SonsOfKentLogo,
     tier: "PLATINUM"
   },
@@ -60,7 +60,7 @@ export const SPONSOR_TESTIMONIALS = [
     quote:
       "Planet Print is thrilled to help bring the festival's vision to life with quality print materials for every event!",
     name: "",
-    role: "Owner, Planet Print",
+    role: "Rick, Planet Print",
     logo: PlanetPrintLogo,
     tier: "BRONZE"
   }
