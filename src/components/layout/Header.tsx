@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Menu,
   X,
@@ -14,21 +14,21 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useLocation } from 'react-router-dom';
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '../components/ui/tooltip';
-// import logo from '../../assets/images/tart-and-soul.jpeg';
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   const menuItems = [
-    { href: 'Home', icon: Home },
-    { href: 'About', icon: Info },
-    { href: 'Events', icon: Calendar },
-    { href: 'Sponsors', icon: Landmark },
-    { href: 'Vendors', icon: Store },
-    { href: 'Recipes', icon: BookOpen },
-    { href: 'History', icon: History },
-    { href: 'Contact', icon: Mail },
+    { href: '/', icon: Home },
+    { href: '/about', icon: Info },
+    { href: '/events', icon: Calendar },
+    { href: '/sponsors', icon: Landmark },
+    { href: '/vendors', icon: Store },
+    { href: '/recipes', icon: BookOpen },
+    { href: '/history', icon: History },
+    { href: '/contact', icon: Mail },
   ];
 
   return (
