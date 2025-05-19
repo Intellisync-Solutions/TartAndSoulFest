@@ -293,7 +293,7 @@ const SponsorsPage = () => {
                     title="Sweet Soul Pioneer"
                     icon={Crown}
                     color="#FFD700"
-                    price="$5,000"
+                    price="$3,500"
                     benefits={SPONSOR_TIERS.PLATINUM.benefits}
                     isPopular={true}
                   />

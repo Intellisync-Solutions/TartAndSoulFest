@@ -6,6 +6,7 @@ import WTRLogo from '../assets/images/WTR.png';
 import DougTheFoodieLogo from '../assets/images/DougTheFoodie.png';
 import CKSXLogo from '../assets/images/CKSX.webp';
 import PlanetPrintLogo from '../assets/images/PlanetPrint.png';
+import AdanaLawLogo from '../assets/images/AdanaLaw.png';
 
 export const SPONSOR_TESTIMONIALS = [
   {
@@ -42,7 +43,7 @@ export const SPONSOR_TESTIMONIALS = [
   },
   {
     quote:
-      "Collaborating with the Tart & Soul Festival has been an exciting journey, amplifying our culinary adventures and celebrating the rich flavors of our local food scene.",
+      "It's been a dream to bring this celebration of our favourite Canadian treat couple with great food, great music to our community.",
     name: "Doug",
     role: "Culinary Influencer, Doug the Foodie",
     logo: DougTheFoodieLogo,
@@ -50,7 +51,7 @@ export const SPONSOR_TESTIMONIALS = [
   },
   {
     quote:
-      "CKSX 99.1 FM is proud to support the Tart & Soul Festival, helping to share the excitement and bring the community together through live event coverage.",
+      "Butter Tarts, Soul Music, Soul Food at Son's of Kent... For a good cause? How could I say NO???",
     name: "",
     role: "Station Manager, CKSX 99.1 FM",
     logo: CKSXLogo,
@@ -62,6 +63,14 @@ export const SPONSOR_TESTIMONIALS = [
     name: "",
     role: "Rick, Planet Print",
     logo: PlanetPrintLogo,
+    tier: "BRONZE"
+  },
+  {
+    quote:
+      "while Adana is a tough cookie when she is fighting for her clients rights in the courtroom, she is powerless when it comes to a well baked Butter Tart and Community events.",
+    name: "",
+    role: "Adana Law, Adana Law",
+    logo: AdanaLawLogo,
     tier: "BRONZE"
   }
 ];

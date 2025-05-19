@@ -136,7 +136,7 @@ const Events = () => {
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
               />
-              <div className="w-full md:w-1/2 flex items-center justify-center bg-[#4A3C3C] p-4 rounded-lg">
+              <div className="w-full md:w-1/2 flex items-center justify-center bg-[#EFDCC5] p-4 rounded-lg">
                 <motion.img 
                   src={TexasKingImage} 
                   alt="Texas King" 

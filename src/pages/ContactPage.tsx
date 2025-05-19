@@ -64,8 +64,8 @@ const ContactPage = () => {
                 >
                   <Mail className="text-tart-mint mb-4" size={32} />
                   <h3 className="text-xl font-semibold mb-2">Email</h3>
-                  <a href="mailto:hello@tartandsoul.com" className="text-gray-300 hover:text-tart-mint transition-colors">
-                    hello@tartandsoul.com
+                  <a href="mailto:dougthefoodie@icloud.com" className="text-gray-300 hover:text-tart-mint transition-colors">
+                  dougthefoodie@icloud.com
                   </a>
                 </motion.div>
 
@@ -77,8 +77,8 @@ const ContactPage = () => {
               >
                 <Phone className="text-tart-mint mb-4" size={32} />
                 <h3 className="text-xl font-semibold mb-2">Phone</h3>
-                <a href="tel:+15551234567" className="text-gray-300 hover:text-tart-mint transition-colors">
-                  (555) 123-4567
+                <a href="tel:+15193556386" className="text-gray-300 hover:text-tart-mint transition-colors">
+                  (519) 355-6386
                 </a>
               </motion.div>
 
@@ -90,7 +90,7 @@ const ContactPage = () => {
               >
                 <MapPin className="text-tart-mint mb-4" size={32} />
                 <h3 className="text-xl font-semibold mb-2">Location</h3>
-                <p className="text-gray-300">123 King Street W, Chatham-Kent</p>
+                <p className="text-gray-300">2 Adelaide Street South, Chatham-Kent, ON</p>
               </motion.div>
             </div>
           </div>

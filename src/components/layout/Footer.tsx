@@ -31,18 +31,18 @@ const Footer = () => {
             <div className="space-y-2 text-gray-300">
               <p className="flex items-center space-x-2">
                 <MapPin size={16} />
-                <span>123 King Street W, Chatham-Kent</span>
+                <span>2 Adelaide St South, Chatham-Kent</span>
               </p>
               <p className="flex items-center space-x-2">
                 <Mail size={16} />
-                <a href="mailto:hello@tartandsoul.com" className="hover:text-[#00A89F] transition-colors">
-                  hello@tartandsoul.com
+                <a href="mailto:dougthefoodie@icloud.com" className="hover:text-[#00A89F] transition-colors">
+                  dougthefoodie@icloud.com
                 </a>
               </p>
               <p className="flex items-center space-x-2">
                 <Phone size={16} />
-                <a href="tel:+15551234567" className="hover:text-[#00A89F] transition-colors">
-                  (555) 123-4567
+                <a href="tel:+15193556386" className="hover:text-[#00A89F] transition-colors">
+                  (519) 355-6386
                 </a>
               </p>
             </div>

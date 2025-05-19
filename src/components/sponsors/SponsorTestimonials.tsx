@@ -41,7 +41,7 @@ const SponsorTestimonials: React.FC<SponsorTestimonialsProps> = ({ testimonials 
                 <div className="mb-4 text-tart-mint text-2xl">“</div>
                 <blockquote className="text-lg text-gray-200 italic mb-4 text-center">{t.quote}</blockquote>
                 <div className="flex items-center gap-3 mt-2">
-                  <div className="w-20 h-20 bg-tart-mint/10 rounded-full flex items-center justify-center">
+                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center p-2">
                     <img
                       src={t.logo}
                       alt={t.name}
