@@ -52,7 +52,7 @@ export const SPONSOR_TESTIMONIALS = [
   {
     quote:
       "Butter Tarts, Soul Music, Soul Food at Son's of Kent... For a good cause? How could I say NO???",
-    name: "",
+    name: "Greg Heatherington",
     role: "Station Manager, CKSX 99.1 FM",
     logo: CKSXLogo,
     tier: "SILVER"
@@ -60,16 +60,16 @@ export const SPONSOR_TESTIMONIALS = [
   {
     quote:
       "Planet Print is thrilled to help bring the festival's vision to life with quality print materials for every event!",
-    name: "",
-    role: "Rick, Planet Print",
+    name: "Rick",
+    role: "Owner, Planet Print",
     logo: PlanetPrintLogo,
     tier: "BRONZE"
   },
   {
     quote:
-      "while Adana is a tough cookie when she is fighting for her clients rights in the courtroom, she is powerless when it comes to a well baked Butter Tart and Community events.",
-    name: "",
-    role: "Adana Law, Adana Law",
+      "While Adana is a tough cookie when she is fighting for her clients rights in the courtroom, she is powerless when it comes to a well baked Butter Tart and Community events.",
+    name: "Adana",
+    role: "Adana Law",
     logo: AdanaLawLogo,
     tier: "BRONZE"
   }

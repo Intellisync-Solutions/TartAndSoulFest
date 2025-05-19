@@ -71,14 +71,14 @@ const SponsorList: React.FC<SponsorListProps> = ({ sponsors }) => {
                 {sponsorsToDisplay.map((sponsor) => (
                   <div
                     key={sponsor.id}
-                    className="bg-[#3A2C2C] rounded-xl p-4 flex flex-col items-center"
+                    className="bg-[#3A2C2C] rounded-xl p-6 flex flex-col items-center hover:bg-[#443535] transition-colors duration-300"
                   >
-                    <div className="w-24 h-24 bg-tart-mint/10 rounded-full flex items-center justify-center mb-2">
+                    <div className="w-36 h-36 bg-[#D4A76A] rounded-full flex items-center justify-center p-3 mb-4 shadow-md">
                       {sponsor.logo ? (
                         <img
                           src={sponsor.logo}
                           alt={sponsor.name}
-                          className="w-20 h-20 object-contain rounded-full"
+                          className="w-28 h-28 object-contain"
                         />
                       ) : (
                         <span className="text-tart-mint text-2xl font-bold">

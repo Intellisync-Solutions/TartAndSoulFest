@@ -188,9 +188,9 @@ export const SPONSORS = [
     tier: 'BRONZE',
     logo: AdanaLawLogo,
     description:
-      'Full-service print shop delivering high-quality materials for community events and businesses.',
+      'Adana Law is a client-focused legal practice serving Chatham, Windsor, Sarnia, and London, specializing in criminal defence, immigration and refugee law, mental health law, and notary services.',
     impact:
-      'Printed banners, posters, and event signage for the festival.',
+      'Supported the festival’s legal needs and provided pro bono legal services.',
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
@@ -207,16 +207,16 @@ export const SPONSORS = [
     tier: 'BRONZE',
     logo: OSWLogo,
     description:
-      'Full-service print shop delivering high-quality materials for community events and businesses.',
+      'Official Tourism Hub to Southwestern Ontario, providing information and resources for visitors.',
     impact:
-      'Printed banners, posters, and event signage for the festival.',
+      'Supported the festival’s tourism needs and provide tourism information and services.',
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
     yearsSponsor: 0,
     initiatives: [],
     contactPerson: '',
-    industry: 'Food',
+    industry: 'Tourism',
 
   },
 ];

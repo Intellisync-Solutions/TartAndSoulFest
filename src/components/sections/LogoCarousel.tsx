@@ -32,23 +32,28 @@ const LogoCarousel: React.FC<LogoCarouselProps> = ({ sponsors, scrollSpeedSecond
         {extendedSponsors.map((sponsor, index) => (
           <motion.div
             key={`${sponsor.id}-${index}`}
-            className="flex-none mx-8"
+            className="flex-none mx-8 bg-white p-4 rounded-lg flex items-center justify-center"
+            style={{
+              height: '100px', // Fixed height for consistency
+              width: '200px', // Fixed width for consistency
+              minWidth: '200px' // Prevent flex-shrink
+            }}
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
             {/* Display logo image if available, otherwise fallback to sponsor name */}
             {sponsor.logo ? (
-  <img
-    src={typeof sponsor.logo === "string" ? sponsor.logo : sponsor.logo?.default}
-    alt={sponsor.name}
-    className="h-48 max-w-none object-contain drop-shadow-lg rounded-2xl mx-8"
-    loading="lazy"
-  />
-) : (
-  <div className="h-48 flex items-center justify-center text-gray-500 text-2xl mx-8">
-    {sponsor.name}
-  </div>
-)}
+              <img
+                src={typeof sponsor.logo === "string" ? sponsor.logo : sponsor.logo?.default}
+                alt={sponsor.name}
+                className="max-h-full max-w-full object-contain"
+                loading="lazy"
+              />
+              ) : (
+                <div className="text-gray-500 text-lg font-medium">
+                  {sponsor.name}
+                </div>
+              )}
           </motion.div>
         ))}
       </div>

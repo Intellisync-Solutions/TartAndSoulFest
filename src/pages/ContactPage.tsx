@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mail, Phone, MapPin, Building2, Store, HandHeart, CakeSlice, Users } from 'lucide-react';
+import { Mail, Phone, MapPin, Building2, Store, HandHeart, CakeSlice, Users, Award } from 'lucide-react';
 import PageHero from '../components/ui/PageHero';
 import GradientText from '../components/ui/GradientText';
 import TartisanForm from '../components/forms/TartisanForm';
 import SponsorForm from '../components/forms/SponsorForm';
 import VolunteerForm from '../components/forms/VolunteerForm';
+import CorporateCrustChallengeForm from '../components/forms/CorporateCrustChallengeForm';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
 
 const HIGHLIGHTS = [
@@ -16,6 +17,10 @@ const HIGHLIGHTS = [
   {
     icon: CakeSlice,
     text: "Tartasians"
+  },
+  {
+    icon: Award,
+    text: "Crust Challenge"
   },
   {
     icon: Users,
@@ -36,7 +41,7 @@ const ContactPage = () => {
 
   // Volunteer form is now managed in its own component (VolunteerForm) and not in ContactPage state.
 
-  const [activeForm, setActiveForm] = useState<'sponsor' | 'tartisan' | 'volunteer'>('sponsor');
+  const [activeForm, setActiveForm] = useState<'sponsor' | 'tartisan' | 'volunteer' | 'crustChallenge'>('sponsor');
 
   return (
     <>
@@ -90,7 +95,7 @@ const ContactPage = () => {
               >
                 <MapPin className="text-tart-mint mb-4" size={32} />
                 <h3 className="text-xl font-semibold mb-2">Location</h3>
-                <p className="text-gray-300">2 Adelaide Street South, Chatham-Kent, ON</p>
+                <p className="text-gray-300">27 Adelaide Street South, Chatham-Kent, ON</p>
               </motion.div>
             </div>
           </div>
@@ -137,6 +142,19 @@ const ContactPage = () => {
                 <Users className="mr-2" size={20} />
                 Volunteer Sign Up
               </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => setActiveForm('crustChallenge')}
+                className={`flex items-center px-6 py-3 rounded-full font-bold ${
+                  activeForm === 'crustChallenge'
+                    ? 'bg-tart-mint text-soul-brown'
+                    : 'border-2 border-tart-mint text-tart-mint'
+                }`}
+              >
+                <Award className="mr-2" size={20} />
+                Crust Challenge
+              </motion.button>
             </div>
           </div>
 
@@ -146,6 +164,7 @@ const ContactPage = () => {
               {activeForm === 'sponsor' && <SponsorForm />}
               {activeForm === 'tartisan' && <TartisanForm />}
               {activeForm === 'volunteer' && <VolunteerForm />}
+              {activeForm === 'crustChallenge' && <CorporateCrustChallengeForm />}
             </AnimatePresence>
           </div>
         </div>
