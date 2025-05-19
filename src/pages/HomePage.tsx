@@ -48,7 +48,7 @@ const FESTIVAL_HIGHLIGHTS = [
     icon: Music,
     stats: [
       { value: "1", label: "Live Stage" },
-      { value: "2", label: "Performances" }
+      { value: "3", label: "Performances" }
     ]
   },
   {
@@ -77,19 +77,19 @@ const TESTIMONIALS = [
     quote: "Tart & Soul brought together everything I love about our community - incredible food, soulful music, and wonderful people. I can't wait for next year!",
     author: "Melissa J.",
     role: "Festival Attendee",
-    year: "2023"
+    year: ""
   },
   {
     quote: "As a butter tart baker, this festival has given me a platform to share my heritage through food. The community support has been overwhelming.",
     author: "David T.",
     role: "Local Baker",
-    year: "2023"
+    year: ""
   },
   {
     quote: "The fusion of soul food and Canadian butter tarts is pure genius. This event has put our town on the culinary map!",
     author: "Sarah M.",
     role: "Food Blogger",
-    year: "2023"
+    year: ""
   }
 ];
 
@@ -98,7 +98,7 @@ const NEXT_EVENT = {
   name: "Tart & Soul Festival",
   date: "2025-06-28T11:00:00",
   location: "Sons of Kent",
-  description: "Join us for our signature event celebrating soul food, butter tarts, and live music."
+  description: "Join us for our signature event celebrating Soul Food, Soul Music, and Butter Tarts."
 };
 
 const HomePage = () => {
@@ -218,15 +218,6 @@ const HomePage = () => {
                       <span>{NEXT_EVENT.location}</span>
                     </div>
                   </div>
-                  
-                  {/* <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-tart-mint text-[#2E1F1F] px-6 py-3 rounded-full font-bold inline-flex items-center space-x-2"
-                  >
-                    <span>Reserve Your Spot</span>
-                    <ArrowRight size={18} />
-                  </motion.button> */}
                 </div>
                 
                 <div className="flex justify-center">

@@ -1,4 +1,3 @@
-import React from 'react';
 import { MapPin, Mail, Phone, Facebook, Instagram, Twitter, Music2 } from 'lucide-react';
 
 const Footer = () => {
@@ -31,7 +30,7 @@ const Footer = () => {
             <div className="space-y-2 text-gray-300">
               <p className="flex items-center space-x-2">
                 <MapPin size={16} />
-                <span>2 Adelaide St South, Chatham-Kent</span>
+                <span>27 Adelaide St South, Chatham-Kent</span>
               </p>
               <p className="flex items-center space-x-2">
                 <Mail size={16} />
@@ -50,9 +49,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Hours</h3>
             <div className="text-gray-300">
-              <p>Monday - Friday: 10am - 8pm</p>
-              <p>Saturday: 11am - 9pm</p>
-              <p>Sunday: 12pm - 6pm</p>
+              <p>Saturday June 28: 11am - 11pm</p>
             </div>
           </div>
           <div>
