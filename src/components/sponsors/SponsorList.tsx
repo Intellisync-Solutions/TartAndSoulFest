@@ -1,7 +1,7 @@
 
 
 interface Sponsor {
-  id: number;
+  id: string;
   name: string;
   tier: string;
   logo: string;

@@ -31,7 +31,7 @@ const SponsorTestimonials: React.FC<SponsorTestimonialsProps> = ({ testimonials 
   const handleNext = () => setPage((prev: number) => (prev + 1) % totalPages);
 
   return (
-    <section className="py-20 bg-[#2E1F1F]">
+    <section className="py-20 bg-gradient-to-b from-[#1a1212] to-[#2E1F1F]">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-10 text-tart-mint">Sponsor Testimonials</h2>
         <div className="relative">
@@ -40,12 +40,12 @@ const SponsorTestimonials: React.FC<SponsorTestimonialsProps> = ({ testimonials 
               <div key={idx} className="bg-[#3A2C2C] rounded-xl p-8 flex flex-col items-center shadow-lg">
                 <div className="mb-4 text-tart-mint text-2xl">“</div>
                 <blockquote className="text-lg text-gray-200 italic mb-4 text-center">{t.quote}</blockquote>
-                <div className="flex items-center gap-3 mt-2">
-                  <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center p-2">
+                <div className="flex items-center gap-4 mt-2">
+                  <div className="w-24 h-24 bg-[#2E1F1F] rounded-full flex items-center justify-center p-2 border border-tart-mint/15">
                     <img
                       src={t.logo}
                       alt={t.name}
-                      className="w-16 h-16 object-contain rounded-full"
+                      className="w-20 h-20 object-contain rounded-full"
                     />
                   </div>
                   <div>
