@@ -85,7 +85,7 @@ const AboutPage = () => {
                     <Music className="text-tart-mint w-6 h-6 mt-1" />
                     <div>
                       <h4 className="font-bold mb-2">Cultural Celebration</h4>
-                      <p className="text-gray-300">Honoring Black heritage through food and music.</p>
+                      <p className="text-gray-300">Honouring Black heritage through food and music.</p>
                     </div>
                   </div>
                   <div className="flex items-start space-x-4">

@@ -3,6 +3,7 @@ import { Calendar, Music, PartyPopper } from 'lucide-react';
 import PageHero from '../components/ui/PageHero';
 import MediaGallery from '../components/sections/MediaGallery';
 import Events from '../components/sections/Events';
+import Awards from '../components/sections/Awards';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
 
 // Copied from MediaGallery.tsx for local typing
@@ -90,6 +91,7 @@ const EventsPage = () => (
       }
     />
     <Events />
+    <Awards />
     <section className="container mx-auto py-16">
       <h2 className="text-3xl font-bold mb-8 text-center text-tart-mint">Media Gallery</h2>
       <MediaGallery items={mediaItems} />
