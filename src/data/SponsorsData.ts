@@ -89,7 +89,7 @@ export const SPONSORS = [
     description:
       'Pioneering AI-first web app development that transforms ideas into innovative digital solutions.',
     impact:
-      'Developed the festival’s ticketing platform, streamlining the experience for 5,000+ attendees.',
+      'Building the Tart & Soul Fest Community Website',
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
@@ -123,7 +123,7 @@ export const SPONSORS = [
     description:
       'Delivering cutting-edge graphic design and printing services that elevate brand identity and creative storytelling.',
     impact:
-      'Designed all festival branding, signage, and merchandise for 2024.',
+      '',
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
@@ -192,7 +192,7 @@ export const SPONSORS = [
     description:
       'Adana Law is a client-focused legal practice serving Chatham, Windsor, Sarnia, and London, specializing in criminal defence, immigration and refugee law, mental health law, and notary services.',
     impact:
-      'Supported the festival’s legal needs and provided pro bono legal services.',
+      '',
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
@@ -247,7 +247,7 @@ export const SPONSORS = [
     description:
       'A boutique hotel and event space offering a unique blend of comfort and style.',
     impact:
-      'Supported the festival’s community needs and providing a platform for cultural exchange and dialogue.',
+      '',
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
