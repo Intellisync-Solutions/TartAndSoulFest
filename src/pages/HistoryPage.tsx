@@ -1,6 +1,6 @@
-
 import PageHero from '../components/ui/PageHero';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
+import SEO from '../components/seo/SEO';
 import HistoryHighlights from '../components/sections/HistoryHighlights';
 import HistoryMediaGallery from '../components/sections/HistoryMediaGallery';
 import HistoryTestimonials from '../components/sections/HistoryTestimonials';
@@ -9,7 +9,6 @@ import HistoryGallery from '../components/sections/HistoryGallery';
 import HistoryMilestones from '../components/sections/HistoryMilestones';
 import FounderStory from '../components/sections/FounderStory';
 import LookingForward from '../components/sections/LookingForward';
-
 
 import { BookOpen, Users, Flag, Cake, Music, Heart, Award, GalleryHorizontalEnd } from "lucide-react";
 
@@ -221,6 +220,12 @@ const FOUNDER_STORY = [
 
 const HistoryPage = () => (
   <>
+    <SEO 
+      title="Our History | Tart & Soul Fest"
+      description="Explore the rich history of Tart & Soul Fest. From our humble beginnings to becoming a celebrated cultural event, discover our journey through the years."
+      keywords={['Tart & Soul Fest history', 'festival origins', 'cultural celebration history', 'event timeline', 'community heritage']}
+      type="website"
+    />
     <PageHero
       variant="history"
       title="Our Story"

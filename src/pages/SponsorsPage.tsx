@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
+import SEO from '../components/seo/SEO';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Crown, Sparkles, Coffee, Gift, BadgeCheck,  Medal, Users, Globe,
-  Link
+
 } from 'lucide-react';
 
 import PageHero from '../components/ui/PageHero';
@@ -184,6 +185,12 @@ const SponsorsPage = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
     >
+      <SEO 
+        title="Sponsors & Partners | Tart & Soul Fest"
+        description="Meet our valued sponsors and partners who make Tart & Soul Fest possible. Discover partnership opportunities and join our community of supporters."
+        keywords={['Tart & Soul Fest sponsors', 'festival partners', 'sponsorship opportunities', 'community partners', 'corporate sponsors']}
+        type="website"
+      />
       <PageHero
         variant="sponsors"
         title="Our Amazing Partners"

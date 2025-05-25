@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
+import SEO from '../components/seo/SEO';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import { Music, Star, Heart, Calendar, MapPin, Clock, Utensils, Users, CakeSlice } from 'lucide-react'; // re-import ArrowRight and ChevronDown when ready to use the "show less/more" button
 
@@ -155,6 +156,12 @@ const HomePage = () => {
   
   return (
     <>
+      <SEO 
+        title="Home | Tart & Soul Fest - Music, Art & Community"
+        description="Join us at Tart & Soul Fest for an unforgettable celebration of music, art, and community. Experience live performances, local vendors, and cultural experiences."
+        keywords={['Tart & Soul Fest', 'music festival', 'art festival', 'community event', 'live music', 'cultural festival']}
+        type="website"
+      />
       <motion.div style={{ opacity, scale }}>
         <PageHero
           variant="home"

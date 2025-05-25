@@ -1,10 +1,10 @@
-
 import { Calendar, Music, PartyPopper } from 'lucide-react';
 import PageHero from '../components/ui/PageHero';
 import MediaGallery from '../components/sections/MediaGallery';
 import Events from '../components/sections/Events';
 import Awards from '../components/sections/Awards';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
+import SEO from '../components/seo/SEO';
 
 // Copied from MediaGallery.tsx for local typing
 interface MediaItem {
@@ -78,6 +78,12 @@ const HIGHLIGHTS = [
 
 const EventsPage = () => (
   <>
+    <SEO 
+      title="Events | Tart & Soul Fest 2025"
+      description="Discover upcoming events at Tart & Soul Fest. Join us for music performances, cultural showcases, and community celebrations."
+      keywords={['Tart & Soul Fest events', 'music festival 2025', 'live performances', 'cultural events', 'festival schedule']}
+      type="event"
+    />
     <PageHero
       variant="events"
       title="Experience the Soul"

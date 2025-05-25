@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { CakeSlice, Coffee, Utensils, Leaf, Plus, Star, Heart, Clock, Users, Award } from 'lucide-react';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
+import SEO from '../components/seo/SEO';
 import PageHero from '../components/ui/PageHero';
 import SubmitRecipeModal from '../components/recipe/SubmitRecipeModal';
 import GradientText from '../components/ui/GradientText';
@@ -7,7 +10,6 @@ import RecipeGrid from '../components/recipes/RecipeGrid';
 import RecipeFilters from '../components/recipes/RecipeFilters';
 import RecipeDetailModal from '../components/recipes/RecipeDetailModal';
 import { Recipe, RecipeCategory } from '../components/recipes/RecipeTypes';
-import { CakeSlice, Coffee, Utensils, Leaf, Plus, Star, Heart, Clock, Users, Award } from 'lucide-react';
 
 export const ICON_MAP = {
   cake: CakeSlice,
@@ -102,9 +104,14 @@ const RecipesPage = () => {
   }, [searchQuery, selectedCategory]);
 
   return (
-    <>
-     
-<PageHero
+    <div className="min-h-screen bg-soul-brown">
+      <SEO 
+        title="Recipes | Tart & Soul Fest"
+        description="Discover delicious recipes from Tart & Soul Fest. From classic butter tarts to soul food favorites, find the perfect dishes to recreate at home."
+        keywords={['Tart & Soul Fest recipes', 'butter tart recipes', 'soul food recipes', 'festival food', 'baking at home']}
+        type="article"
+      />
+      <PageHero
           variant="home"
           title="Tart & Soul Recipes"
           subtitle="Bake, Share, and Celebrate"
@@ -115,10 +122,6 @@ const RecipesPage = () => {
             { icon: ICON_MAP["leaf"], text: "Dietary Options" }
           ]}
         />
-        <div className="min-h-screen bg-[#432f2f] pt-20">
-  <GradientText className="block text-4xl md:text-6xl font-extrabold pl-48 text-center mb-4">
-   Coming Soon
-  </GradientText>
         <div className="container mx-auto px-4 py-12">
           
           {/* Search and Filters */}
@@ -183,8 +186,7 @@ const RecipesPage = () => {
           />
         </div>
         <ScrollToTopButton />
-      </div>
-    </>
+    </div>
   );
 };
 

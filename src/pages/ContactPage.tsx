@@ -8,6 +8,7 @@ import SponsorForm from '../components/forms/SponsorForm';
 import VolunteerForm from '../components/forms/VolunteerForm';
 import CorporateCrustChallengeForm from '../components/forms/CorporateCrustChallengeForm';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
+import SEO from '../components/seo/SEO';
 
 const HIGHLIGHTS = [
   {
@@ -32,8 +33,6 @@ const HIGHLIGHTS = [
   }
 ];
 
-
-
 const ContactPage = () => {
   // Sponsor form is now managed in its own component (SponsorForm) and not in ContactPage state.
 
@@ -44,7 +43,13 @@ const ContactPage = () => {
   const [activeForm, setActiveForm] = useState<'sponsor' | 'tartisan' | 'volunteer' | 'crustChallenge'>('sponsor');
 
   return (
-    <>
+    <div className="min-h-screen bg-soul-brown">
+      <SEO 
+        title="Contact Us | Tart & Soul Fest"
+        description="Get in touch with the Tart & Soul Fest team. We'd love to hear from you about partnerships, vendor opportunities, or any questions you may have."
+        keywords={['contact Tart & Soul Fest', 'festival contact', 'vendor inquiries', 'partnership opportunities', 'event information']}
+        type="website"
+      />
       <div className="pt-20">
         <PageHero
           variant="sponsors"
@@ -74,104 +79,104 @@ const ContactPage = () => {
                   </a>
                 </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="flex flex-col items-center p-6 bg-[#3A2C2C] rounded-lg"
-              >
-                <Phone className="text-tart-mint mb-4" size={32} />
-                <h3 className="text-xl font-semibold mb-2">Phone</h3>
-                <a href="tel:+15193556386" className="text-gray-300 hover:text-tart-mint transition-colors">
-                  (519) 355-6386
-                </a>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="flex flex-col items-center p-6 bg-[#3A2C2C] rounded-lg"
+                >
+                  <Phone className="text-tart-mint mb-4" size={32} />
+                  <h3 className="text-xl font-semibold mb-2">Phone</h3>
+                  <a href="tel:+15193556386" className="text-gray-300 hover:text-tart-mint transition-colors">
+                    (519) 355-6386
+                  </a>
+                </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="flex flex-col items-center p-6 bg-[#3A2C2C] rounded-lg"
-              >
-                <MapPin className="text-tart-mint mb-4" size={32} />
-                <h3 className="text-xl font-semibold mb-2">Location</h3>
-                <p className="text-gray-300">27 Adelaide Street South, Chatham-Kent, ON</p>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                  className="flex flex-col items-center p-6 bg-[#3A2C2C] rounded-lg"
+                >
+                  <MapPin className="text-tart-mint mb-4" size={32} />
+                  <h3 className="text-xl font-semibold mb-2">Location</h3>
+                  <p className="text-gray-300">27 Adelaide Street South, Chatham-Kent, ON</p>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Form Tabs */}
+            <div className="max-w-4xl mx-auto mb-12">
+              <div className="flex flex-wrap justify-center gap-4">
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveForm('sponsor')}
+                  className={`flex items-center px-6 py-3 rounded-full font-bold ${
+                    activeForm === 'sponsor'
+                      ? 'bg-tart-mint text-soul-brown'
+                      : 'border-2 border-tart-mint text-tart-mint'
+                  }`}
+                >
+                  <Building2 className="mr-2" size={20} />
+                  Become a Sponsor
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveForm('tartisan')}
+                  className={`flex items-center px-6 py-3 rounded-full font-bold ${
+                    activeForm === 'tartisan'
+                      ? 'bg-tart-mint text-soul-brown'
+                      : 'border-2 border-tart-mint text-tart-mint'
+                  }`}
+                >
+                  <Store className="mr-2" size={20} />
+                  Join as Tartisan
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveForm('volunteer')}
+                  className={`flex items-center px-6 py-3 rounded-full font-bold ${
+                    activeForm === 'volunteer'
+                      ? 'bg-tart-mint text-soul-brown'
+                      : 'border-2 border-tart-mint text-tart-mint'
+                  }`}
+                >
+                  <Users className="mr-2" size={20} />
+                  Volunteer Sign Up
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveForm('crustChallenge')}
+                  className={`flex items-center px-6 py-3 rounded-full font-bold ${
+                    activeForm === 'crustChallenge'
+                      ? 'bg-tart-mint text-soul-brown'
+                      : 'border-2 border-tart-mint text-tart-mint'
+                  }`}
+                >
+                  <Award className="mr-2" size={20} />
+                  Crust Challenge
+                </motion.button>
+              </div>
+            </div>
+
+            {/* Forms */}
+            <div className="max-w-2xl mx-auto">
+              <AnimatePresence mode="wait">
+                {activeForm === 'sponsor' && <SponsorForm />}
+                {activeForm === 'tartisan' && <TartisanForm />}
+                {activeForm === 'volunteer' && <VolunteerForm />}
+                {activeForm === 'crustChallenge' && <CorporateCrustChallengeForm />}
+              </AnimatePresence>
             </div>
           </div>
-
-          {/* Form Tabs */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="flex space-x-4 justify-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveForm('sponsor')}
-                className={`flex items-center px-6 py-3 rounded-full font-bold ${
-                  activeForm === 'sponsor'
-                    ? 'bg-tart-mint text-soul-brown'
-                    : 'border-2 border-tart-mint text-tart-mint'
-                }`}
-              >
-                <Building2 className="mr-2" size={20} />
-                Become a Sponsor
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveForm('tartisan')}
-                className={`flex items-center px-6 py-3 rounded-full font-bold ${
-                  activeForm === 'tartisan'
-                    ? 'bg-tart-mint text-soul-brown'
-                    : 'border-2 border-tart-mint text-tart-mint'
-                }`}
-              >
-                <Store className="mr-2" size={20} />
-                Join as Tartisan
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveForm('volunteer')}
-                className={`flex items-center px-6 py-3 rounded-full font-bold ${
-                  activeForm === 'volunteer'
-                    ? 'bg-tart-mint text-soul-brown'
-                    : 'border-2 border-tart-mint text-tart-mint'
-                }`}
-              >
-                <Users className="mr-2" size={20} />
-                Volunteer Sign Up
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setActiveForm('crustChallenge')}
-                className={`flex items-center px-6 py-3 rounded-full font-bold ${
-                  activeForm === 'crustChallenge'
-                    ? 'bg-tart-mint text-soul-brown'
-                    : 'border-2 border-tart-mint text-tart-mint'
-                }`}
-              >
-                <Award className="mr-2" size={20} />
-                Crust Challenge
-              </motion.button>
-            </div>
-          </div>
-
-          {/* Forms */}
-          <div className="max-w-2xl mx-auto">
-            <AnimatePresence mode="wait">
-              {activeForm === 'sponsor' && <SponsorForm />}
-              {activeForm === 'tartisan' && <TartisanForm />}
-              {activeForm === 'volunteer' && <VolunteerForm />}
-              {activeForm === 'crustChallenge' && <CorporateCrustChallengeForm />}
-            </AnimatePresence>
-          </div>
-        </div>
-      </section>
+        </section>
+        <ScrollToTopButton />
+      </div>
     </div>
-      <ScrollToTopButton />
-    </>
   );
 };
 

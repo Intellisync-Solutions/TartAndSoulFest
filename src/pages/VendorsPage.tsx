@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
+import SEO from '../components/seo/SEO';
 import { CakeSlice, Loader2, Search, Store, Users } from 'lucide-react';
 
 // Custom components
@@ -355,6 +356,12 @@ const VendorsPage = () => {
 
   return (
     <div className="relative overflow-hidden pt-10 bg-[#1F1413]">
+      <SEO 
+        title="Vendors & Artisans | Tart & Soul Fest"
+        description="Discover talented vendors and artisans at Tart & Soul Fest. Explore unique crafts, delicious food, and one-of-a-kind products from local and regional makers."
+        keywords={['Tart & Soul Fest vendors', 'artisan market', 'local crafts', 'food vendors', 'shopping festival']}
+        type="website"
+      />
       {/* Decorative background */}
       <motion.div
         className="absolute inset-0 bg-[#1F1413] z-0"

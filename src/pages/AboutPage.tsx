@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Heart, Music, Users, BookOpen, History as HistoryIcon, Sparkles } from 'lucide-react';
 import PageHero from '../components/ui/PageHero';
 import GradientText from '../components/ui/GradientText';
+import SEO from '../components/seo/SEO';
 
 const HIGHLIGHTS = [
   {
@@ -23,6 +24,12 @@ const HIGHLIGHTS = [
 const AboutPage = () => {
   return (
     <>
+      <SEO 
+        title="About Tart & Soul Fest"
+        description="Discover the rich heritage and cultural impact of Tart & Soul Fest. Learn about our story, mission, and the community we've built."
+        keywords={['Tart & Soul Fest', 'about us', 'festival history', 'cultural event', 'community']}
+        type="website"
+      />
       <div className="pt-20">
         <PageHero
           variant="about"
