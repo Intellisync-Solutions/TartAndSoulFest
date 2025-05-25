@@ -18,7 +18,7 @@ export const SPONSOR_TESTIMONIALS = [
     name: "Doug Hunter",
     role: "Sons of Kent Brewery",
     logo: SonsOfKentLogo,
-    tier: "PLATINUM"
+    tier: "SweetSoulPioneer"
   },
   {
     quote:
@@ -26,7 +26,7 @@ export const SPONSOR_TESTIMONIALS = [
     name: "Chris",
     role: "Intellisync Solutions",
     logo: IntellisyncLogo,
-    tier: "GOLD"
+    tier: "GoldenButter"
   },
   {
     quote:
@@ -34,7 +34,7 @@ export const SPONSOR_TESTIMONIALS = [
     name: "Doug",
     role: "WTR - With This Ring",
     logo: WTRLogo,
-    tier: "GOLD"
+    tier: "GoldenButter"
   },
   {
     quote:
@@ -42,7 +42,7 @@ export const SPONSOR_TESTIMONIALS = [
     name: "",
     role: "LPGraphics",
     logo: LPGraphicsLogo,
-    tier: "SILVER"
+    tier: "SugarSprinkle"
   },
   {
     quote:
@@ -50,7 +50,7 @@ export const SPONSOR_TESTIMONIALS = [
     name: "Doug",
     role: "Doug the Foodie",
     logo: DougTheFoodieLogo,
-    tier: "BRONZE"
+    tier: "CrustCompanion"
   },
   {
     quote:
@@ -58,7 +58,7 @@ export const SPONSOR_TESTIMONIALS = [
     name: "Greg Hetherington",
     role: "CKSX 99.1 FM",
     logo: CKSXLogo,
-    tier: "SILVER"
+    tier: "SugarSprinkle"
   },
   {
     quote:
@@ -66,7 +66,7 @@ export const SPONSOR_TESTIMONIALS = [
     name: "Rick Gardiner",
     role: "Planet Print",
     logo: PlanetPrintLogo,
-    tier: "BRONZE"
+    tier: "CrustCompanion"
   },
   {
     quote:
@@ -74,7 +74,7 @@ export const SPONSOR_TESTIMONIALS = [
     name: "Adana",
     role: "Adana Law",
     logo: AdanaLawLogo,
-    tier: "BRONZE"
+    tier: "CrustCompanion"
   },
   {
     quote:
@@ -82,7 +82,7 @@ export const SPONSOR_TESTIMONIALS = [
     name: "Sarah",
     role: "Retro Suites Hotel",
     logo: retrosuitesLogo,
-    tier: "BRONZE"
+    tier: "CrustCompanion"
   },
   {
     quote:
@@ -90,7 +90,7 @@ export const SPONSOR_TESTIMONIALS = [
     name: "",
     role: "Ontario's Southwest",
     logo: OSWLogo,
-    tier: "BRONZE"
+    tier: "CrustCompanion"
   },
   {
     quote:
@@ -98,6 +98,6 @@ export const SPONSOR_TESTIMONIALS = [
     name: "",
     role: "Curious Bird",
     logo: CuriousBirdLogo,
-    tier: "BRONZE"
+    tier: "CrustCompanion"
   }
 ];

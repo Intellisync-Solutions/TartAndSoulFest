@@ -20,7 +20,7 @@ export const HIGHLIGHTS = [
 ];
 
 export const SPONSOR_TIERS = {
-  PLATINUM: {
+  SweetSoulPioneer: {
     name: 'Sweet Soul Pioneer',
     icon: Crown,
     color: '#8EF4B6',
@@ -31,8 +31,8 @@ export const SPONSOR_TIERS = {
       'Custom partnership opportunities',
     ],
   },
-  GOLD: {
-    name: 'Soulful Innovator',
+  GoldenButter: {
+    name: 'Golden Butter',
     icon: Sparkles,
     color: '#FFD700',
     description: 'High-impact sponsorship with standout benefits.',
@@ -42,8 +42,8 @@ export const SPONSOR_TIERS = {
       'Priority booth placement',
     ],
   },
-  SILVER: {
-    name: 'Groove Maker',
+  SugarSprinkle: {
+    name: 'Sugar Sprinkle',
     icon: Gift,
     color: '#C0C0C0',
     description: 'Supporter-level sponsorship for key contributors.',
@@ -52,8 +52,8 @@ export const SPONSOR_TIERS = {
       'Sponsor appreciation post',
     ],
   },
-  BRONZE: {
-    name: 'Community Friend',
+  CrustCompanion: {
+    name: 'Crust Companion',
     icon: Coffee,
     color: '#CD7F32',
     description: 'Entry-level sponsorship for local supporters.',
@@ -66,8 +66,8 @@ export const SPONSOR_TIERS = {
 export const SPONSORS = [
   {
     id: 'sons-of-kent',
-    name: 'Sons of Kent Brewery',
-    tier: 'PLATINUM',
+    name: 'Sons of Kent',
+    tier: 'SweetSoulPioneer',
     logo: SonsOfKentLogo,
     description:
       'A craft brewery producing unique beers inspired by local history and traditions, bringing an authentic taste to every event.',
@@ -76,7 +76,7 @@ export const SPONSORS = [
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: '',
@@ -84,7 +84,7 @@ export const SPONSORS = [
   {
     id: 'intellisync',
     name: 'Intellisync Solutions',
-    tier: 'GOLD',
+    tier: 'GoldenButter',
     logo: IntellisyncLogo,
     description:
       'Pioneering AI-first web app development that transforms ideas into innovative digital solutions.',
@@ -93,7 +93,7 @@ export const SPONSORS = [
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: '',
@@ -101,7 +101,7 @@ export const SPONSORS = [
   {
     id: 'wtr',
     name: 'WTR - With This Ring',
-    tier: 'GOLD',
+    tier: 'GoldenButter',
     logo: WTRLogo,
     description:
       'Experts in crafting unforgettable wedding experiences with a personal touch and meticulous attention to detail.',
@@ -110,7 +110,7 @@ export const SPONSORS = [
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: '',
@@ -118,7 +118,7 @@ export const SPONSORS = [
   {
     id: 'lpgraphics',
     name: 'LPGraphics',
-    tier: 'SILVER',
+    tier: 'SugarSprinkle',
     logo: LPGraphicsLogo,
     description:
       'Delivering cutting-edge graphic design and printing services that elevate brand identity and creative storytelling.',
@@ -127,7 +127,7 @@ export const SPONSORS = [
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: '',
@@ -135,7 +135,7 @@ export const SPONSORS = [
   {
     id: 'doug-the-foodie',
     name: 'Doug the Foodie',
-    tier: 'BRONZE',
+    tier: 'CrustCompanion',
     logo: DougTheFoodieLogo,
     description:
       'A celebrated local culinary influencer who shares authentic food reviews, recipes, and gastronomic adventures.',
@@ -144,7 +144,7 @@ export const SPONSORS = [
     location: 'Various Locales',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: '',
@@ -152,7 +152,7 @@ export const SPONSORS = [
   {
     id: 'cksx',
     name: 'CKSX 99.1 FM',
-    tier: 'SILVER',
+    tier: 'SugarSprinkle',
     logo: CKSXLogo,
     description:
       'Local radio station supporting community events and spreading the word about Tart & Soul Festival.',
@@ -161,7 +161,7 @@ export const SPONSORS = [
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: 'Media',
@@ -169,7 +169,7 @@ export const SPONSORS = [
   {
     id: 'planet-print',
     name: 'Planet Print',
-    tier: 'BRONZE',
+    tier: 'SugarSprinkle',
     logo: PlanetPrintLogo,
     description:
       'Full-service print shop delivering high-quality materials for community events and businesses.',
@@ -178,7 +178,7 @@ export const SPONSORS = [
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: 'Printing',
@@ -187,7 +187,7 @@ export const SPONSORS = [
   {
     id: 'adana-law',
     name: 'Adana Law',
-    tier: 'BRONZE',
+    tier: 'CrustCompanion',
     logo: AdanaLawLogo,
     description:
       'Adana Law is a client-focused legal practice serving Chatham, Windsor, Sarnia, and London, specializing in criminal defence, immigration and refugee law, mental health law, and notary services.',
@@ -196,7 +196,7 @@ export const SPONSORS = [
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: 'Legal',
@@ -206,7 +206,7 @@ export const SPONSORS = [
   {
     id: 'osw',
     name: 'OSW',
-    tier: 'BRONZE',
+    tier: 'CrustCompanion',
     logo: OSWLogo,
     description:
       'Official Tourism Hub to Southwestern Ontario, providing information and resources for visitors.',
@@ -215,7 +215,7 @@ export const SPONSORS = [
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: 'Tourism',
@@ -224,7 +224,7 @@ export const SPONSORS = [
   {
     id: 'curious-bird',
     name: 'Curious Bird',
-    tier: 'BRONZE',
+    tier: 'CrustCompanion',
     logo: CuriousBirdLogo,
     description:
       "A BIPOC endeavour, Curious Bird's the place for candid converstaion, opinion sharing, and culturally enriched experiences from a birds eye view ." ,
@@ -233,7 +233,7 @@ export const SPONSORS = [
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: 'Community',
@@ -242,7 +242,7 @@ export const SPONSORS = [
   {
     id: 'retrosuites',
     name: 'Retrosuites',
-    tier: 'BRONZE',
+    tier: 'CrustCompanion',
     logo: retrosuitesLogo,
     description:
       'A boutique hotel and event space offering a unique blend of comfort and style.',
@@ -251,7 +251,7 @@ export const SPONSORS = [
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
-    yearsSponsor: 0,
+    yearsSponsor: 1,
     initiatives: [],
     contactPerson: '',
     industry: 'Community',

@@ -15,6 +15,17 @@ import { FAQ_DATA } from '../data/FAQData';
 import { HIGHLIGHTS, SPONSOR_TIERS, SPONSORS, IMPACT_STATISTICS } from "../data/SponsorsData";
 import { SPONSOR_TESTIMONIALS } from "../data/SponsorTestimonials";
 
+// Define the type for tier names in testimonials
+type TestimonialTier = 'PLATINUM' | 'GOLD' | 'SILVER' | 'BRONZE';
+
+// Map tier names from testimonials to SPONSOR_TIERS keys
+const TIER_MAPPING: Record<TestimonialTier, keyof typeof SPONSOR_TIERS> = {
+  'PLATINUM': 'SweetSoulPioneer', // Maps to 'Sweet Soul Pioneer'
+  'GOLD': 'GoldenButter',         // Maps to Golden Butter;
+  'SILVER': 'SugarSprinkle',      // Maps to 'Sugar Sprinkle'
+  'BRONZE': 'CrustCompanion'      // Maps to 'Crust Companion'
+} as const;
+
 import SponsorCard from '../components/sections/SponsorCard';
 import TestimonialCard from '../components/sections/TestimonialCard';
 
@@ -102,20 +113,22 @@ const TestimonialCarousel: React.FC<{ testimonials: typeof SPONSOR_TESTIMONIALS 
   return (
     <div className="relative overflow-hidden bg-[#2E1F1F] rounded-xl py-10 px-8">
       <div className="absolute top-0 left-0 w-32 h-32 bg-tart-mint/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-48 h-48 bg-[#FFA600]/5 rounded-full blur-3xl"></div>
-      
-      <div className="relative z-10">
-        <div className="mb-8 text-center">
+      <div className="relative z-10 max-w-4xl mx-auto">
+        <div className="text-center mb-8">
           <h3 className="text-2xl font-bold mb-2">
-            <GradientText variant="secondary">What Our Sponsors Say</GradientText>
+            What Our <span className="text-tart-mint">Sponsors</span> Say
           </h3>
           <p className="text-gray-400">Hear directly from our partners about their experience</p>
         </div>
         
         <div className="relative h-64">
           <AnimatePresence mode="wait">
-            {testimonials.map((testimonial, idx) => (
-              active === idx ? (
+            {testimonials.map((testimonial, idx) => {
+              
+              const tierKey = TIER_MAPPING[testimonial.tier as TestimonialTier] || TIER_MAPPING.BRONZE;
+              const tierInfo = SPONSOR_TIERS[tierKey];
+              
+              return active === idx ? (
                 <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
@@ -129,16 +142,16 @@ const TestimonialCarousel: React.FC<{ testimonials: typeof SPONSOR_TESTIMONIALS 
                     <span 
                       className="inline-block text-xs px-3 py-1 rounded-full" 
                       style={{ 
-                        backgroundColor: `${SPONSOR_TIERS[testimonial.tier as keyof typeof SPONSOR_TIERS].color}20`,
-                        color: SPONSOR_TIERS[testimonial.tier as keyof typeof SPONSOR_TIERS].color
+                        backgroundColor: `${tierInfo.color}20`,
+                        color: tierInfo.color
                       }}
                     >
-                      {SPONSOR_TIERS[testimonial.tier as keyof typeof SPONSOR_TIERS].name} Sponsor
+                      {tierInfo.name} Sponsor
                     </span>
                   </div>
                 </motion.div>
-              ) : null
-            ))}
+              ) : null;
+            })}
           </AnimatePresence>
         </div>
         
@@ -163,14 +176,19 @@ const SponsorsPage = () => {
   const [activeTab, setActiveTab] = useState<'current' | 'become'>('current');
 
   return (
-    <motion.div className="pt-20">
+    <motion.div 
+      className="min-h-screen bg-[#1F1413] overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <PageHero
-  variant="sponsors"
-  title="Our Amazing Partners"
-  subtitle="Meet the incredible organizations helping us build a stronger, more vibrant community"
-  highlights={HIGHLIGHTS}
-  image="/images/sponsors-hero.jpg" // Update as needed for your sponsor hero image
-/>
+        variant="sponsors"
+        title="Our Amazing Partners"
+        subtitle="Meet the incredible organizations helping us build a stronger, more vibrant community"
+        highlights={HIGHLIGHTS}
+        image="/images/sponsors-hero.jpg"
+      />
 
       {/*
         // for future development
@@ -184,11 +202,11 @@ const SponsorsPage = () => {
       <SponsorTestimonials testimonials={SPONSOR_TESTIMONIALS} />
 
 
-      {/* Sponsors By Industry */}
-      {/* <section className="py-20 bg-[#3A2C2C] relative overflow-hidden">
+      {/* Sponsors By Industry - Commented out for future use */}
+      {/* <section className="relative py-16 md:py-24 lg:py-32 bg-[#3A2C2C] overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-tart-mint rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-[#FFA600] rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
+          <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-tart-mint rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-48 h-48 md:w-64 md:h-64 bg-[#FFA600] rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
         </div>
         
         <div className="container mx-auto px-4 relative z-10">
@@ -231,11 +249,20 @@ const SponsorsPage = () => {
         </div>
       </section> */}
 
-      {/* Sponsor Cards section with tabs */}
-      <section className="py-20 bg-[#2E1F1F] relative overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-center mb-12">
-            <div className="inline-flex rounded-full p-1 bg-[#3A2C2C]">
+      {/* Main Sponsors Section */}
+      <section className="relative py-16 md:py-24 bg-gradient-to-b from-[#2E1F1F] to-[#1F1413] overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[url('/images/pattern.svg')] opacity-5"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div 
+            className="flex justify-center mb-8 md:mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            <div className="inline-flex rounded-full p-1 bg-[#3A2C2C] shadow-lg">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -261,7 +288,7 @@ const SponsorsPage = () => {
                 Become a Sponsor
               </motion.button>
             </div>
-          </div>
+          </motion.div>
           
           <AnimatePresence mode="wait">
             {activeTab === 'current' ? (
@@ -270,16 +297,32 @@ const SponsorsPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className="py-4"
               >
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                  {SPONSORS.map((sponsor) => (
-                    <SponsorCard
-                      key={sponsor.id}
-                      sponsor={sponsor}
-                      tierInfo={SPONSOR_TIERS[sponsor.tier as keyof typeof SPONSOR_TIERS]}
-                    />
-                  ))}
-                </div>
+                {SPONSORS.length > 0 ? (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                    {SPONSORS.map((sponsor) => (
+                      <motion.div
+                        key={sponsor.id}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.3 }}
+                        whileHover={{ scale: 1.02 }}
+                        className="h-full"
+                      >
+                        <SponsorCard
+                          sponsor={sponsor}
+                          tierInfo={SPONSOR_TIERS[sponsor.tier as keyof typeof SPONSOR_TIERS]}
+                        />
+                      </motion.div>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-12">
+                    <p className="text-gray-400 text-lg">No sponsors to display at the moment.</p>
+                  </div>
+                )}
               </motion.div>
             ) : (
               <motion.div
@@ -287,36 +330,45 @@ const SponsorsPage = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
+                transition={{ duration: 0.3, ease: 'easeInOut' }}
+                className="py-4"
               >
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                  <SponsorshipLevel
-                    title="Sweet Soul Pioneer"
-                    icon={Crown}
-                    color="#FFD700"
-                    price="$3,500"
-                    benefits={SPONSOR_TIERS.PLATINUM.benefits}
-                    isPopular={true}
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="h-full"
+                  >
+                    <SponsorshipLevel
+                      title="Sweet Soul Pioneer"
+                      icon={Crown}
+                      color="#FFD700"
+                      price="$3,500"
+                      benefits={SPONSOR_TIERS.SweetSoulPioneer.benefits}
+                      isPopular={true}
+                    />
+                  </motion.div>
                   <SponsorshipLevel
                     title="Golden Butter"
                     icon={Sparkles}
                     color="#FFA600"
                     price="$2,500"
-                    benefits={SPONSOR_TIERS.GOLD.benefits}
+                    benefits={SPONSOR_TIERS.GoldenButter.benefits}
                   />
                   <SponsorshipLevel
                     title="Sugar Sprinkle"
                     icon={Gift}
                     color="#C0C0C0"
                     price="$1,000"
-                    benefits={SPONSOR_TIERS.SILVER.benefits}
+                    benefits={SPONSOR_TIERS.SugarSprinkle.benefits}
                   />
                   <SponsorshipLevel
                     title="Crust Companion"
                     icon={Coffee}
                     color="#CD7F32"
                     price="$500"
-                    benefits={SPONSOR_TIERS.BRONZE.benefits}
+                    benefits={SPONSOR_TIERS.CrustCompanion.benefits}
                   />
                 </div>
                 
@@ -343,7 +395,7 @@ const SponsorsPage = () => {
           </AnimatePresence>
         </div>
       </section>
-      
+
       {/* Testimonials & CTA Section */}
       <section className="py-20 bg-[#3A2C2C] relative overflow-hidden">
         <div className="container mx-auto px-4">
@@ -437,11 +489,20 @@ const SponsorsPage = () => {
         </div>
       </section>
       
-      {/* Newsletter Section */}
-      <Newsletter />
+      <section className="py-16 md:py-24 bg-[#1F1413] relative">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+        >
+          <Newsletter />
+        </motion.div>
+      </section>
+      
       <ScrollToTopButton />
     </motion.div>
   );
-};
+}
 
 export default SponsorsPage;

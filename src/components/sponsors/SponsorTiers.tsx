@@ -17,10 +17,10 @@ interface SponsorTiersProps {
 }
 
 const tierGradients: Record<string, string> = {
-  PLATINUM: 'from-[#8EF4B6] to-[#e0fffa]',
-  GOLD: 'from-[#FFD700] to-[#FFF7AE]',
-  SILVER: 'from-[#C0C0C0] to-[#F0F0F0]',
-  BRONZE: 'from-[#CD7F32] to-[#FFD6AE]',
+  SweetSoulPioneer: 'from-[#8EF4B6] to-[#e0fffa]',
+  GoldenButter: 'from-[#FFD700] to-[#FFF7AE]',
+  SugarSprinkle: 'from-[#C0C0C0] to-[#F0F0F0]',
+  CrustCompanion: 'from-[#CD7F32] to-[#FFD6AE]',
 };
 
 const AnimatedBg = () => (

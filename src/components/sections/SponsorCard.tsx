@@ -4,7 +4,7 @@ import { ExternalLink } from 'lucide-react';
 
 interface SponsorCardProps {
   sponsor: {
-    id: number;
+    id: String;
     name: string;
     tier: string;
     logo: string;
@@ -31,63 +31,67 @@ const SponsorCard: React.FC<SponsorCardProps> = ({ sponsor, tierInfo }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       whileHover={{ scale: 1.03, boxShadow: '0 6px 36px 0 #00A89F33' }}
-      className="relative flex flex-col items-center bg-gradient-to-br from-[#2E1F1F] to-[#3A2C2C] rounded-3xl shadow-xl border border-opacity-10 border-tart-mint p-6 transition-all duration-300"
+      className="relative flex flex-col h-full bg-gradient-to-br from-[#2E1F1F] to-[#3A2C2C] rounded-3xl shadow-xl border border-opacity-10 border-tart-mint p-6 transition-all duration-300"
       style={{ borderColor: tierInfo.color }}
     >
       {/* Tier badge */}
-      <div className="absolute top-4 right-4 z-10">
+      <div className="absolute top-3 right-3 z-10">
         <span
-          className="flex items-center px-3 py-1 rounded-full text-xs font-bold shadow-md"
+          className="flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold shadow-md whitespace-nowrap"
           style={{ background: tierInfo.color, color: '#2E1F1F' }}
         >
-          <TierIcon size={16} className="mr-1" />
+          <TierIcon size={12} className="mr-1" />
           {tierInfo.name}
         </span>
       </div>
-      {/* Space below badge */}
-      <div className="mb-6"></div>
-      {/* Card body: logo left, content right */}
-      <div className="flex flex-row items-center w-full gap-6 mt-2 mb-2">
-        {/* Logo image left */}
-        <div className="flex-shrink-0 flex items-center justify-center min-h-[96px] min-w-[96px]">
-          {sponsor.logo ? (
-            <img
-              src={sponsor.logo}
-              alt={sponsor.name}
-              className="object-contain h-24 w-24 rounded-xl bg-white/10 p-2"
-              loading="lazy"
-            />
-          ) : (
-            <span className="text-3xl font-bold text-tart-mint">
-              {sponsor.name[0]}
-            </span>
-          )}
-        </div>
-        {/* Content right */}
-        <div className="flex flex-col flex-1 min-w-0">
-          <h3 className="text-xl font-extrabold text-white mb-2 drop-shadow text-left">
+      
+      {/* Card content */}
+      <div className="flex flex-col h-full pt-8">
+        {/* Logo and Name */}
+        <div className="flex flex-col items-center mb-4">
+          <div className="w-24 h-24 rounded-xl bg-white/5 flex items-center justify-center p-3 mb-4">
+            {sponsor.logo ? (
+              <img
+                src={sponsor.logo}
+                alt={sponsor.name}
+                className="object-contain h-full w-full"
+                loading="lazy"
+              />
+            ) : (
+              <span className="text-2xl font-bold text-tart-mint">
+                {sponsor.name[0]}
+              </span>
+            )}
+          </div>
+          <h3 className="text-xl font-extrabold text-white text-center line-clamp-2 mb-2">
             {sponsor.name}
           </h3>
+        </div>
+
+        {/* Content */}
+        <div className="flex-1 flex flex-col">
           {sponsor.impact && (
-            <span className="inline-block bg-tart-mint/10 text-tart-mint text-xs font-semibold px-3 py-1 rounded-full mb-2 text-left">
+            <span className="inline-block bg-tart-mint/10 text-tart-mint text-xs font-semibold px-3 py-1 rounded-full mb-3 text-center self-center">
               {sponsor.impact}
             </span>
           )}
-          <p className="text-sm text-gray-300 mb-4 line-clamp-3 text-left">
+          
+          <p className="text-sm text-gray-300 mb-5 line-clamp-4 text-center flex-1">
             {sponsor.description}
           </p>
-          <div className="flex w-full justify-start gap-3 mt-auto">
-            {sponsor.website && (
+          
+          {sponsor.website && (
+            <div className="mt-auto pt-2">
               <a
                 href={sponsor.website}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center px-4 py-2 rounded-full bg-tart-mint text-[#2E1F1F] font-bold shadow hover:bg-tart-mint/90 transition"
+                className="flex items-center justify-center w-full px-4 py-2 text-sm rounded-full bg-tart-mint text-[#2E1F1F] font-semibold hover:bg-tart-mint/90 transition-colors"
               >
-                Visit <ExternalLink size={16} className="ml-2" />
+                Visit <ExternalLink size={14} className="ml-1.5" />
               </a>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </div>
     </motion.div>

@@ -22,6 +22,8 @@ interface SponsorListProps {
 
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import SponsorCard from "../sections/SponsorCard";
+import { SPONSOR_TIERS } from "../../data/SponsorsData";
 
 const SPONSORS_PER_PAGE = 4;
 const AUTO_SCROLL_INTERVAL = 4000;
@@ -66,32 +68,35 @@ const SponsorList: React.FC<SponsorListProps> = ({ sponsors }) => {
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -100, opacity: 0 }}
                 transition={{ duration: 0.5 }}
-                className="grid grid-cols-2 md:grid-cols-4 gap-6"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"
               >
-                {sponsorsToDisplay.map((sponsor) => (
-                  <div
-                    key={sponsor.id}
-                    className="bg-[#3A2C2C] rounded-xl p-6 flex flex-col items-center hover:bg-[#443535] transition-colors duration-300"
-                  >
-                    <div className="w-36 h-36 bg-[#D4A76A] rounded-full flex items-center justify-center p-3 mb-4 shadow-md">
-                      {sponsor.logo ? (
-                        <img
-                          src={sponsor.logo}
-                          alt={sponsor.name}
-                          className="w-28 h-28 object-contain"
-                        />
-                      ) : (
-                        <span className="text-tart-mint text-2xl font-bold">
-                          {sponsor.name[0]}
-                        </span>
-                      )}
+                {sponsorsToDisplay.map((sponsor) => {
+                  // Get the tier info from SPONSOR_TIERS or use a default if not found
+                  const tierKey = Object.entries(SPONSOR_TIERS).find(([_, tier]) => 
+                    tier.name.toLowerCase() === sponsor.tier.toLowerCase()
+                  )?.[0] || sponsor.tier;
+                  
+                  const tierInfo = SPONSOR_TIERS[tierKey as keyof typeof SPONSOR_TIERS] || {
+                    name: sponsor.tier,
+                    icon: () => null,
+                    color: '#D4A76A',
+                    description: '',
+                    benefits: []
+                  };
+                  
+                  return (
+                    <div key={sponsor.id} className="w-full h-full">
+                      <SponsorCard 
+                        sponsor={sponsor} 
+                        tierInfo={{
+                          name: tierInfo.name,
+                          icon: tierInfo.icon,
+                          color: tierInfo.color
+                        }} 
+                      />
                     </div>
-                    <span className="text-white font-semibold text-lg text-center">
-                      {sponsor.name}
-                    </span>
-                    <span className="text-tart-mint text-xs mt-1">{sponsor.tier}</span>
-                  </div>
-                ))}
+                  );
+                })}
               </motion.div>
             </AnimatePresence>
           </div>

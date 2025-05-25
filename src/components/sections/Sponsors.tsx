@@ -9,6 +9,10 @@ import wtrLogo from '../../assets/images/WTR.png';
 import dougTheFoodieLogo from '../../assets/images/DougTheFoodie.png';
 import cksxLogo from '../../assets/images/CKSX.webp';
 import planetPrintLogo from '../../assets/images/PlanetPrint.png';
+import adanaLawLogo from '../../assets/images/AdanaLaw.png';
+import oswLogo from '../../assets/images/OSW.png';
+import curiousBirdLogo from '../../assets/images/CuriousBird.png';
+import retrosuitesLogo from '../../assets/images/retrosuites.webp';
 
 type SponsorLevel = {
   tier: string;
@@ -22,7 +26,7 @@ type SponsorLevel = {
 
 const sponsorLevels: SponsorLevel[] = [
   {
-    tier: 'Soul Pioneer',
+    tier: 'Sweet Soul Pioneer',
     description: 'Our highest tier partners who help keep the soul alive and thriving.',
     sponsors: [
       {
@@ -35,10 +39,30 @@ const sponsorLevels: SponsorLevel[] = [
         logo: intellisyncLogo,
         description: 'Technology partner powering our digital experience.',
       },
+      {
+        name: 'Adana Law',
+        logo: adanaLawLogo,
+        description: 'Legal partner providing support for our events.',
+      },
+      {
+        name: 'OSW',
+        logo: oswLogo,
+        description: 'Event planning partner helping us organize our events.',
+      },
+      {
+        name: 'Curious Bird',
+        logo: curiousBirdLogo,
+        description: 'Marketing partner helping us promote our events.',
+      },
+      {
+        name: 'Retrosuites',
+        logo: retrosuitesLogo,
+        description: 'Venue partner providing space for our events.',
+      },
     ],
   },
   {
-    tier: 'Rhythm Maker',
+    tier: 'Golden Butter',
     description: 'Partners who add their unique beat to our community.',
     sponsors: [
       {
@@ -54,7 +78,7 @@ const sponsorLevels: SponsorLevel[] = [
     ],
   },
   {
-    tier: 'Harmony Builder',
+    tier: 'Sugar Sprinkle',
     description: 'Friends who help us create perfect harmony in our events.',
     sponsors: [
       {
