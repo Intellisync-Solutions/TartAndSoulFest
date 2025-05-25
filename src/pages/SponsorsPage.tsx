@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  Crown, Sparkles, Coffee, Gift, BadgeCheck,  Medal, Users, Globe, 
+  Crown, Sparkles, Coffee, Gift, BadgeCheck,  Medal, Users, Globe,
+  Link
 } from 'lucide-react';
 
 import PageHero from '../components/ui/PageHero';
@@ -85,14 +86,15 @@ const SponsorshipLevel: React.FC<SponsorshipLevelProps> = ({
             ))}
           </ul>
           
-          <motion.button
+          {/* 'Become a Sponsor' button - Commented out for future use */}
+          {/* <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="w-full py-3 rounded-full font-bold flex items-center justify-center"
             style={{ backgroundColor: color, color: '#2E1F1F' }}
           >
             Become a Sponsor
-          </motion.button>
+          </motion.button> */}
         </div>
       </div>
     </motion.div>
@@ -116,7 +118,7 @@ const TestimonialCarousel: React.FC<{ testimonials: typeof SPONSOR_TESTIMONIALS 
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h3 className="text-2xl font-bold mb-2">
-            What Our <span className="text-tart-mint">Sponsors</span> Say
+            <GradientText variant="secondary">What our Sponsors say</GradientText>
           </h3>
           <p className="text-gray-400">Hear directly from our partners about their experience</p>
         </div>
@@ -386,6 +388,7 @@ const SponsorsPage = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="bg-white text-[#2E1F1F] px-8 py-3 rounded-full font-bold"
+                    onClick={() => window.location.href = '/contact#sponsor-form'}
                   >
                     Contact Sponsorship Team
                   </motion.button>
@@ -400,7 +403,7 @@ const SponsorsPage = () => {
       <section className="py-20 bg-[#3A2C2C] relative overflow-hidden">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-8 text-tart-mint">
-            What our sponsors say
+            Our Sponsors
           </h2>
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <TestimonialCarousel testimonials={SPONSOR_TESTIMONIALS} />
@@ -451,13 +454,14 @@ const SponsorsPage = () => {
                 >
                   Download Sponsor Kit
                 </motion.button> */}
-                <motion.button
+                <motion.a
+                  href="/contact"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="border-2 border-tart-mint text-tart-mint px-6 py-3 rounded-full font-medium flex-1 text-center hover:bg-tart-mint hover:text-[#2E1F1F] transition-colors"
+                  className="bg-tart-mint text-[#2E1F1F] px-6 py-3 rounded-full font-medium flex-1 text-center"
                 >
-                  Contact Us
-                </motion.button>
+                 Contact Us 
+                </motion.a>
               </div>
             </motion.div>
           </div>
