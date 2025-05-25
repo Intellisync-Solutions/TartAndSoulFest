@@ -4,59 +4,88 @@
 
 @layer base {
   :root {
-    /* Primary Colors */
-    --color-soul-brown: 46, 31, 31;      /* #2E1F1F - Deep rich brown */
-    --color-tart-mint: 0, 168, 159;    /* #00A89F -  */
-    --color-butter-orange: 255, 166, 0;   /* #FFA600 - Warm butter */
-    --color-crust-brown: 90, 42, 12;      /* #5A2A0C - Rich crust */
-    
-    /* Background Variations */
-    --color-bg-primary: 46, 31, 31;      /* #2E1F1F */
-    --color-bg-secondary: 58, 44, 44;    /* #3A2C2C */
-    
+    /* Dark Backgrounds */
+    --color-bg-dark-primary-rgb: 46, 31, 31;      /* #2E1F1F Soul Brown */
+    --color-bg-dark-secondary-rgb: 58, 44, 44;    /* #3A2C2C Darker Brown */
+    --color-bg-dark-tertiary-rgb: 31, 22, 22;     /* #1F1616 Even Deeper Brown */
+
+    /* Light Backgrounds */
+    --color-bg-light-primary-rgb: 247, 245, 242;  /* #F7F5F2 Warm Off-White/Cream */
+    --color-bg-light-secondary-rgb: 255, 255, 255;/* #FFFFFF White */
+    --color-bg-light-subtle-rgb: 234, 230, 225;   /* #EAE6E1 Light Warm Gray */
+
     /* Text Colors */
-    --color-text-primary: 255, 255, 255;  /* White */
-    --color-text-secondary: 209, 213, 219; /* Gray-300 */
-    --color-text-accent: 0, 168, 159;   /*  */
+    --color-text-on-dark-primary-rgb: 255, 255, 255; /* #FFFFFF White */
+    --color-text-on-dark-secondary-rgb: 209, 213, 219;/* #D1D5DB Light Gray */
+    /* --color-text-on-dark-accent will use accent vars directly */
+    --color-text-on-light-primary-rgb: 46, 31, 31;    /* #2E1F1F Soul Brown */
+    --color-text-on-light-secondary-rgb: 82, 73, 64;  /* #524940 Warm Dark Gray/Brown */
+    /* --color-text-on-light-accent will use accent vars directly */
+
+    /* Accent: Tart Mint Family */
+    --color-accent-mint-primary-rgb: 0, 168, 159;    /* #00A89F Tart Mint */
+    --color-accent-mint-dark-rgb: 0, 122, 115;     /* #007A73 Darker Mint */
+    --color-accent-mint-light-rgb: 160, 210, 219;  /* #A0D2DB Pale Mint/Aqua */
+
+    /* Accent: Butter Orange Family */
+    --color-accent-orange-primary-rgb: 255, 166, 0;  /* #FFA600 Butter Orange */
+    --color-accent-orange-dark-rgb: 217, 142, 0;    /* #D98E00 Darker Orange */
+    --color-accent-orange-light-rgb: 255, 214, 133; /* #FFD685 Pale Orange/Gold */
+
+    /* Accent: Deep Plum Family */
+    --color-accent-plum-primary-rgb: 106, 13, 173;  /* #6A0DAD Vibrant Deep Plum */
+    --color-accent-plum-dark-rgb: 74, 13, 102;     /* #4A0D66 Darker Plum */
+    --color-accent-plum-light-rgb: 195, 155, 211;  /* #C39BD3 Light Plum/Lavender */
+
+    /* Accent: Crust Brown (Existing for Gradients) */
+    --color-crust-brown-rgb: 90, 42, 12;        /* #5A2A0C Rich crust */
+
+    /* Neutral & Utility Colors */
+    --color-border-dark-theme-rgb: 74, 59, 59;     /* #4A3B3B Subtle Brown for borders on dark */
+    --color-border-light-theme-rgb: 212, 205, 195; /* #D4CDC3 Subtle Warm Gray for borders on light */
+    --color-destructive-rgb: 217, 83, 79;        /* #D9534F Slightly Muted Red */
+    --color-success-rgb: 92, 184, 92;          /* #5CB85C Standard Green */
+    --color-warning-rgb: 240, 173, 78;         /* #F0AD4E Standard Yellow/Orange */
   }
 
   body {
-    @apply bg-[#2E1F1F] text-white antialiased;
+    /* Default to dark theme background and text */
+    @apply bg-[rgb(var(--color-bg-dark-primary-rgb))] text-[rgb(var(--color-text-on-dark-primary-rgb))] antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
 @layer components {
   .tart-gradient {
-    @apply bg-gradient-to-r from-[#5A2A0C] via-[#8E3200] to-[#A64B2A];
+    @apply bg-gradient-to-r from-[rgb(var(--color-crust-brown-rgb))] via-[#8E3200] to-[#A64B2A]; /* Keep some existing for now */
   }
   
   .soul-gradient {
-    @apply bg-gradient-to-r from-[#00A89F] via-[#009B93] to-[#008E87];
+    @apply bg-gradient-to-r from-[rgb(var(--color-accent-mint-primary-rgb))] via-[rgb(var(--color-accent-mint-dark-rgb))] to-[rgb(var(--color-accent-mint-dark-rgb))];
   }
   
   .butter-gradient {
-    @apply bg-gradient-to-r from-[#FFA600] via-[#FF7A00] to-[#FF5400];
+    @apply bg-gradient-to-r from-[rgb(var(--color-accent-orange-primary-rgb))] via-[rgb(var(--color-accent-orange-dark-rgb))] to-[#FF5400]; /* Keep some existing for now */
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-xl hover:shadow-[#00A89F]/10;
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-[rgb(var(--color-accent-mint-primary-rgb)/0.1)];
   }
   
   .nav-link {
-    @apply hover:text-[#00A89F] transition-colors duration-200;
+    @apply hover:text-[rgb(var(--color-accent-mint-primary-rgb))] transition-colors duration-200;
   }
   
   .btn-primary {
-    @apply bg-[#00A89F] text-[#2E1F1F] px-6 py-3 rounded-full font-bold 
-           hover:bg-opacity-90 transition-colors duration-200
-           focus:outline-none focus:ring-2 focus:ring-[#00A89F] focus:ring-opacity-50;
+    @apply bg-[rgb(var(--color-accent-mint-primary-rgb))] text-[rgb(var(--color-bg-dark-primary-rgb))] px-6 py-3 rounded-full font-bold 
+           hover:bg-[rgb(var(--color-accent-mint-dark-rgb))] transition-colors duration-200
+           focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-accent-mint-primary-rgb))] focus:ring-opacity-50;
   }
   
   .btn-secondary {
-    @apply border-2 border-[#00A89F] text-[#00A89F] px-6 py-3 rounded-full font-bold
-           hover:bg-[#00A89F] hover:text-[#2E1F1F] transition-all duration-200
-           focus:outline-none focus:ring-2 focus:ring-[#00A89F] focus:ring-opacity-50;
+    @apply border-2 border-[rgb(var(--color-accent-mint-primary-rgb))] text-[rgb(var(--color-accent-mint-primary-rgb))] px-6 py-3 rounded-full font-bold
+           hover:bg-[rgb(var(--color-accent-mint-primary-rgb))] hover:text-[rgb(var(--color-bg-dark-primary-rgb))] transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-[rgb(var(--color-accent-mint-primary-rgb))] focus:ring-opacity-50;
   }
 }
 
@@ -77,9 +106,9 @@
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-[#2E1F1F];
+  @apply bg-[rgb(var(--color-bg-dark-primary-rgb))];
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-[#00A89F] rounded-full;
+  @apply bg-[rgb(var(--color-accent-mint-primary-rgb))] rounded-full;
 }

@@ -1,7 +1,7 @@
 // All sponsor-related data for the Sponsors page
 import { Users, Zap, ShieldCheck, Medal, HandHeart, Crown, Star, Sparkles, Coffee, Gift, } from 'lucide-react';
 import IntellisyncLogo from '../assets/images/logo.png';
-import SonsOfKentLogo from '../assets/images/sonsofkent.webp';
+import SonsOfKentLogo from '../assets/images/sonsofkent.png';
 import LPGraphicsLogo from '../assets/images/LPGraphics.png';
 import WTRLogo from '../assets/images/WTR.png';
 import DougTheFoodieLogo from '../assets/images/DougTheFoodie.png';
@@ -9,6 +9,8 @@ import CKSXLogo from '../assets/images/CKSX.webp';
 import PlanetPrintLogo from '../assets/images/PlanetPrint.png';
 import AdanaLawLogo from '../assets/images/AdanaLaw.png';
 import OSWLogo from "../assets/images/OSW.png";
+import CuriousBirdLogo from '../assets/images/CuriousBird.png';
+import retrosuitesLogo from '../assets/images/retrosuites.webp';
 
 export const HIGHLIGHTS = [
   { icon: HandHeart, text: "Community Support" },
@@ -63,14 +65,14 @@ export const SPONSOR_TIERS = {
 
 export const SPONSORS = [
   {
-    id: 1,
+    id: 'sons-of-kent',
     name: 'Sons of Kent Brewery',
     tier: 'PLATINUM',
     logo: SonsOfKentLogo,
     description:
       'A craft brewery producing unique beers inspired by local history and traditions, bringing an authentic taste to every event.',
     impact:
-      'Supported the launch of the festival’s first community beer garden, raising over $10,000 for local charities.',
+      'Supported the launch of the festival’s first community Tatisan event.',
     location: 'Chatham, ON',
     website: '',
     testimonial: '',
@@ -80,7 +82,7 @@ export const SPONSORS = [
     industry: '',
   },
   {
-    id: 2,
+    id: 'intellisync',
     name: 'Intellisync Solutions',
     tier: 'GOLD',
     logo: IntellisyncLogo,
@@ -97,7 +99,7 @@ export const SPONSORS = [
     industry: '',
   },
   {
-    id: 3,
+    id: 'wtr',
     name: 'WTR - With This Ring',
     tier: 'GOLD',
     logo: WTRLogo,
@@ -114,7 +116,7 @@ export const SPONSORS = [
     industry: '',
   },
   {
-    id: 4,
+    id: 'lpgraphics',
     name: 'LPGraphics',
     tier: 'SILVER',
     logo: LPGraphicsLogo,
@@ -131,7 +133,7 @@ export const SPONSORS = [
     industry: '',
   },
   {
-    id: 5,
+    id: 'doug-the-foodie',
     name: 'Doug the Foodie',
     tier: 'BRONZE',
     logo: DougTheFoodieLogo,
@@ -148,7 +150,7 @@ export const SPONSORS = [
     industry: '',
   },
   {
-    id: 6,
+    id: 'cksx',
     name: 'CKSX 99.1 FM',
     tier: 'SILVER',
     logo: CKSXLogo,
@@ -165,7 +167,7 @@ export const SPONSORS = [
     industry: 'Media',
   },
   {
-    id: 7,
+    id: 'planet-print',
     name: 'Planet Print',
     tier: 'BRONZE',
     logo: PlanetPrintLogo,
@@ -183,7 +185,7 @@ export const SPONSORS = [
 
   },
   {
-    id: 8,
+    id: 'adana-law',
     name: 'Adana Law',
     tier: 'BRONZE',
     logo: AdanaLawLogo,
@@ -202,7 +204,7 @@ export const SPONSORS = [
   },
  
   {
-    id: 10,
+    id: 'osw',
     name: 'OSW',
     tier: 'BRONZE',
     logo: OSWLogo,
@@ -217,6 +219,42 @@ export const SPONSORS = [
     initiatives: [],
     contactPerson: '',
     industry: 'Tourism',
+
+  },
+  {
+    id: 'curious-bird',
+    name: 'Curious Bird',
+    tier: 'BRONZE',
+    logo: CuriousBirdLogo,
+    description:
+      "A BIPOC endeavour, Curious Bird's the place for candid converstaion, opinion sharing, and culturally enriched experiences from a birds eye view ." ,
+    impact:
+      'Supporting the festival’s community needs and providing a platform for cultural exchange and dialogue.',
+    location: 'Chatham, ON',
+    website: '',
+    testimonial: '',
+    yearsSponsor: 0,
+    initiatives: [],
+    contactPerson: '',
+    industry: 'Community',
+
+  },
+  {
+    id: 'retrosuites',
+    name: 'Retrosuites',
+    tier: 'BRONZE',
+    logo: retrosuitesLogo,
+    description:
+      'A boutique hotel and event space offering a unique blend of comfort and style.',
+    impact:
+      'Supported the festival’s community needs and providing a platform for cultural exchange and dialogue.',
+    location: 'Chatham, ON',
+    website: '',
+    testimonial: '',
+    yearsSponsor: 0,
+    initiatives: [],
+    contactPerson: '',
+    industry: 'Community',
 
   },
 ];

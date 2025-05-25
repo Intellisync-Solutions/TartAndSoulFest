@@ -21,14 +21,14 @@ const Header = () => {
   const location = useLocation();
 
   const menuItems = [
-    { href: '/', icon: Home },
-    { href: '/about', icon: Info },
-    { href: '/events', icon: Calendar },
-    { href: '/sponsors', icon: Landmark },
-    { href: '/vendors', icon: Store },
-    { href: '/recipes', icon: BookOpen },
-    { href: '/history', icon: History },
-    { href: '/contact', icon: Mail },
+    { href: '/', icon: Home, label: 'Home' },
+    { href: '/about', icon: Info, label: 'About' },
+    { href: '/events', icon: Calendar, label: 'Events' },
+    { href: '/sponsors', icon: Landmark, label: 'Sponsors' },
+    { href: '/vendors', icon: Store, label: 'Vendors' },
+    { href: '/recipes', icon: BookOpen, label: 'Recipes' },
+    { href: '/history', icon: History, label: 'History' },
+    { href: '/contact', icon: Mail, label: 'Contact' },
   ];
 
   return (
@@ -75,14 +75,14 @@ const Header = () => {
                 <Link
                   to={item.href}
                   className={`group p-2 rounded-full hover:bg-[#3d2828] transition-colors duration-200 ${location.pathname === item.href ? 'text-yellow-400' : ''}`}
-                  aria-label={item.href}
+                  aria-label={item.label}
                 >
                   <Tooltip>
                     <TooltipTrigger asChild>
                       <Icon className="h-7 w-7" />
                     </TooltipTrigger>
                     <TooltipContent side="top" align="center">
-                      {item.href}
+                      {item.label}
                     </TooltipContent>
                   </Tooltip>
                 </Link>
@@ -153,7 +153,7 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                     >
                       <Icon className="w-5 h-5 mr-1 transition-colors duration-300 group-hover:text-[#00A89F]" />
-                      <span>{item.href}</span>
+                      <span>{item.label}</span>
                     </Link>
                   </motion.div>
                 );

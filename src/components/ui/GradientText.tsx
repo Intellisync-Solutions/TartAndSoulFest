@@ -15,14 +15,26 @@ interface GradientTextProps {
 }
 
 const defaultVariants: Record<string, { colors: string[]; angle: number }> = {
+  /**
+   * Primary gradient
+   * Mint green to dark brown
+   */
   primary: {
     colors: ['#00A89F', '#2E1F1F', '#3A2C2C', '#00A89F'],
     angle: -45,
   },
+  /**
+   * Secondary gradient
+   * Orange to mint green to dark brown and back to orange
+   */
   secondary: {
     colors: ['#FFA600', '#00A89F', '#5A2A0C', '#FFA600'],
     angle: -45,
   },
+  /**
+   * Accent gradient
+   * Dark brown to mint green to orange and back to dark brown
+   */
   accent: {
     colors: ['#2E1F1F', '#00A89F', '#FFA600', '#2E1F1F'],
     angle: -45,
@@ -37,7 +49,7 @@ const GradientText: React.FC<GradientTextProps> = ({
   children,
   className = '',
   variant = 'primary',
-  duration = 30,
+  duration = 10, // Reduced from 30s to 10s for a faster animationlower number faster the transition
   colors,
   angle,
   pauseOnHover = true,
@@ -81,7 +93,22 @@ const GradientText: React.FC<GradientTextProps> = ({
       animate={
         shouldAnimate
           ? {
-              backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+              backgroundPosition: [
+                // Start: First color (#00A89F) at left, cycling through the gradient
+                '0% 50%',    // Colors: #00A89F → #2E1F1F → #3A2C2C → #00A89F
+                // Moving right through the gradient
+                '25% 50%',   // Colors: #2E1F1F → #3A2C2C → #00A89F → #2E1F1F
+                '50% 50%',   // Colors: #3A2C2C → #00A89F → #2E1F1F → #3A2C2C
+                '75% 50%',   // Colors: #00A89F → #2E1F1F → #3A2C2C → #00A89F
+                // At far right, starts moving back
+                '100% 50%',  // Colors: #2E1F1F → #3A2C2C → #00A89F → #2E1F1F
+                // Moving back left through the gradient
+                '75% 50%',   // Colors: #3A2C2C → #00A89F → #2E1F1F → #3A2C2C
+                '50% 50%',   // Colors: #00A89F → #2E1F1F → #3A2C2C → #00A89F
+                '25% 50%',   // Colors: #2E1F1F → #3A2C2C → #00A89F → #2E1F1F
+                // Back to start
+                '0% 50%'     // Colors: #00A89F → #2E1F1F → #3A2C2C → #00A89F
+              ],
             }
           : {}
       }

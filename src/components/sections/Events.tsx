@@ -10,7 +10,7 @@ const Events = () => {
     {
       title: 'Tart & Soul Festival',
       date: 'June 28, 2025',
-      time: '11:00 AM - 8:00 PM',
+      time: '11:00 AM - 11:00 PM',
       location: 'Sons of Kent',
       music: (
         <motion.span
@@ -140,7 +140,7 @@ const Events = () => {
                 <motion.img 
                   src={TexasKingImage} 
                   alt="Texas King" 
-                  className="w-full h-auto max-h-[320px] object-cover rounded-lg shadow-xl"
+                  className="w-full h-auto max-h-[550px] object-cover rounded-lg shadow-xl"
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.3 }}
                 />

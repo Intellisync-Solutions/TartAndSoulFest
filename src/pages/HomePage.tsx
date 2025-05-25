@@ -269,7 +269,7 @@ const HomePage = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold mb-4">
-              <GradientText variant="primary">Festival Highlights</GradientText>
+              <GradientText variant="secondary">Festival Highlights</GradientText>
             </h2>
             <p className="text-gray-300 max-w-2xl mx-auto">
               Experience the magic of Tart & Soul, where every moment is filled with flavor, rhythm, and community connection.
@@ -487,13 +487,13 @@ const HomePage = () => {
         <FeaturedTarts />
         
         {/* Section Divider */}
-        <div className="py-16 bg-[#2E1F1F] relative overflow-hidden">
+        <div className="py-16 bg-background relative overflow-hidden">
           <div className="absolute inset-0 flex items-center">
-            <div className="h-px w-full bg-gradient-to-r from-transparent via-tart-mint/30 to-transparent"></div>
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
           </div>
           <div className="relative flex justify-center">
-            <div className="bg-[#2E1F1F] px-6 py-3 rounded-full border border-tart-mint/20 shadow-lg shadow-tart-mint/5">
-              <CakeSlice className="text-tart-mint w-8 h-8" />
+            <div className="bg-background px-6 py-3 rounded-full border border-primary/20 shadow-lg shadow-[rgb(var(--color-accent-mint-primary))]/5">
+              <CakeSlice className="text-primary w-8 h-8" />
             </div>
           </div>
         </div>
@@ -517,10 +517,10 @@ const CountdownUnit = ({ value, label }: { value: number; label: string }) => {
       animate={{ opacity: 1, y: 0 }}
       className="flex flex-col items-center"
     >
-      <div className="w-16 h-16 md:w-20 md:h-20 bg-[#2E1F1F] rounded-lg flex items-center justify-center shadow-lg mb-2">
-        <span className="text-2xl md:text-3xl font-bold text-tart-mint">{value}</span>
+      <div className="w-16 h-16 md:w-20 md:h-20 bg-background rounded-lg flex items-center justify-center shadow-lg mb-2">
+        <span className="text-2xl md:text-3xl font-bold text-primary">{value}</span>
       </div>
-      <span className="text-xs text-gray-400">{label}</span>
+      <span className="text-xs text-muted-foreground">{label}</span>
     </motion.div>
   );
 };

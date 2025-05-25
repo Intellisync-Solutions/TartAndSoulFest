@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Animations and other utilities from original index.css - kept as is */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
@@ -30,11 +31,7 @@
   }
 }
 
-/* Add your global styles here */
-
-
-
-/* Styling for the founder's story content */
+/* Styling for the founder's story content - kept as is */
 .founder-story-content p {
   line-height: 1.8;
   text-shadow: 0 1px 2px rgba(0,0,0,0.1);
@@ -44,56 +41,77 @@
   font-weight: 500;
 }
 
-
-
+/* Theme variables using HSL for Tailwind compatibility */
 @layer base {
-  :root {
-    --background: 0 0% 100%;
-    --foreground: 20 14.3% 4.1%;
-    --card: 0 0% 100%;
-    --card-foreground: 20 14.3% 4.1%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 20 14.3% 4.1%;
-    --primary: 24 9.8% 10%;
-    --primary-foreground: 60 9.1% 97.8%;
-    --secondary: 60 4.8% 95.9%;
-    --secondary-foreground: 24 9.8% 10%;
-    --muted: 60 4.8% 95.9%;
-    --muted-foreground: 25 5.3% 44.7%;
-    --accent: 60 4.8% 95.9%;
-    --accent-foreground: 24 9.8% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: 20 5.9% 90%;
-    --input: 20 5.9% 90%;
-    --ring: 20 14.3% 4.1%;
+  :root { /* Light Theme Defaults */
+    --background: 30 33% 97%;    /* #F7F5F2 Warm Off-White/Cream (using HSL from --color-bg-light-primary-rgb) */
+    --foreground: 30 18% 16%;    /* #2E1F1F Soul Brown (using HSL from --color-text-on-light-primary-rgb) */
+    
+    --card: 0 0% 100%;           /* #FFFFFF White (using HSL from --color-bg-light-secondary-rgb) */
+    --card-foreground: 30 18% 16%; /* #2E1F1F Soul Brown */
+    
+    --popover: 0 0% 100%;        /* #FFFFFF White */
+    --popover-foreground: 30 18% 16%; /* #2E1F1F Soul Brown */
+    
+    --primary: 178 100% 33%;     /* #00A89F Tart Mint (using HSL from --color-accent-mint-primary-rgb) */
+    --primary-foreground: 0 0% 100%; /* #FFFFFF White (for text on primary mint) */
+    
+    --secondary: 39 100% 50%;    /* #FFA600 Butter Orange (using HSL from --color-accent-orange-primary-rgb) */
+    --secondary-foreground: 30 18% 16%; /* #2E1F1F Soul Brown (for text on secondary orange) */
+    
+    --muted: 30 20% 90%;         /* #EAE6E1 Light Warm Gray (using HSL from --color-bg-light-subtle-rgb) */
+    --muted-foreground: 30 10% 38%; /* #524940 Warm Dark Gray/Brown (using HSL from --color-text-on-light-secondary-rgb) */
+    
+    --accent: 283 81% 36%;       /* #6A0DAD Deep Plum (using HSL from --color-accent-plum-primary-rgb) */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF White (for text on accent plum) */
+    
+    --destructive: 2 63% 58%;    /* #D9534F Muted Red (using HSL from --color-destructive-rgb) */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF White */
+    
+    --border: 30 15% 80%;        /* #D4CDC3 Subtle Warm Gray (using HSL from --color-border-light-theme-rgb) */
+    --input: 0 0% 100%;           /* #FFFFFF White */
+    --ring: 178 100% 33%;        /* #00A89F Tart Mint (for focus rings) */
+    
+    --radius: 0.5rem;
+
+    /* Chart colors can remain or be updated to use new vars if desired */
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem;
   }
-  .dark {
-    --background: 20 14.3% 4.1%;
-    --foreground: 60 9.1% 97.8%;
-    --card: 20 14.3% 4.1%;
-    --card-foreground: 60 9.1% 97.8%;
-    --popover: 20 14.3% 4.1%;
-    --popover-foreground: 60 9.1% 97.8%;
-    --primary: 60 9.1% 97.8%;
-    --primary-foreground: 24 9.8% 10%;
-    --secondary: 12 6.5% 15.1%;
-    --secondary-foreground: 60 9.1% 97.8%;
-    --muted: 12 6.5% 15.1%;
-    --muted-foreground: 24 5.4% 63.9%;
-    --accent: 12 6.5% 15.1%;
-    --accent-foreground: 60 9.1% 97.8%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 60 9.1% 97.8%;
-    --border: 12 6.5% 15.1%;
-    --input: 12 6.5% 15.1%;
-    --ring: 24 5.7% 82.9%;
+
+  .dark { /* Dark Theme Overrides */
+    --background: 30 18% 16%;    /* #2E1F1F Soul Brown (using HSL from --color-bg-dark-primary-rgb) */
+    --foreground: 0 0% 100%;     /* #FFFFFF White (using HSL from --color-text-on-dark-primary-rgb) */
+    
+    --card: 30 18% 20%;          /* #3A2C2C Darker Brown (using HSL from --color-bg-dark-secondary-rgb) */
+    --card-foreground: 0 0% 100%; /* #FFFFFF White */
+    
+    --popover: 30 18% 12%;       /* #1F1616 Even Deeper Brown (using HSL from --color-bg-dark-tertiary-rgb) */
+    --popover-foreground: 0 0% 100%; /* #FFFFFF White */
+    
+    --primary: 178 100% 33%;     /* #00A89F Tart Mint */
+    --primary-foreground: 30 18% 16%; /* #2E1F1F Soul Brown (for text on primary mint in dark mode) */
+    
+    --secondary: 39 100% 50%;    /* #FFA600 Butter Orange */
+    --secondary-foreground: 30 18% 16%; /* #2E1F1F Soul Brown (for text on secondary orange in dark mode) */
+    
+    --muted: 30 18% 20%;         /* #3A2C2C Darker Brown */
+    --muted-foreground: 60 8% 85%; /* #D1D5DB Light Gray (using HSL from --color-text-on-dark-secondary-rgb) */
+    
+    --accent: 283 81% 36%;       /* #6A0DAD Deep Plum */
+    --accent-foreground: 0 0% 100%; /* #FFFFFF White */
+    
+    --destructive: 2 63% 58%;    /* #D9534F Muted Red */
+    --destructive-foreground: 0 0% 100%; /* #FFFFFF White */
+    
+    --border: 30 15% 25%;        /* #4A3B3B Subtle Brown (using HSL from --color-border-dark-theme-rgb) */
+    --input: 30 18% 20%;          /* #3A2C2C Darker Brown */
+    --ring: 178 100% 33%;        /* #00A89F Tart Mint */
+
+    /* Chart colors can remain or be updated to use new vars if desired */
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;
@@ -102,13 +120,13 @@
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
   }
   body {
+    /* Default body will be dark theme as per globals.css. 
+       Tailwind's bg-background/text-foreground will respect .dark class toggling. */
     @apply bg-background text-foreground;
   }
 }
