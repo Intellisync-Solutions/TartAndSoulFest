@@ -47,7 +47,7 @@ const SponsorTiers: React.FC<SponsorTiersProps> = ({ tiers }) => (
         Sponsorship Levels
       </h2>
       <TooltipProvider>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 px-4 sm:px-6 lg:px-8 max-w-[2000px] mx-auto">
           {Object.entries(tiers).map(([key, tier]) => {
             const Icon = tier.icon;
             const gradient = tierGradients[key] || 'from-tart-mint to-white';
@@ -65,7 +65,7 @@ const SponsorTiers: React.FC<SponsorTiersProps> = ({ tiers }) => (
                   boxShadow: `0 16px 48px 0 ${tier.color}99`
                 }}
                 transition={{ duration: 0.5, type: 'spring' }}
-                className={`relative cursor-pointer rounded-3xl flex flex-col items-center group ${isFeatured ? 'scale-105 z-20 shadow-[0_0_80px_10px_rgba(142,244,182,0.3)] animate-pulse-slow' : ''}`}
+                className={`relative cursor-pointer rounded-3xl flex flex-col items-center group ${isFeatured ? 'scale-105 z-20 shadow-[0_0_80px_10px_rgba(142,244,182,0.3)] animate-pulse-slow' : ''} w-full h-full min-h-[320px]`}
                 style={{
                   perspective: 1200,
                   background: `linear-gradient(135deg, var(--tw-gradient-stops))`,
@@ -83,7 +83,7 @@ const SponsorTiers: React.FC<SponsorTiersProps> = ({ tiers }) => (
                   {tier.name}
                   {isFeatured && <span className="ml-1">🌟</span>}
                 </span>
-                <Card className="w-full h-full bg-white/10 backdrop-blur-lg border-2 border-white/10 shadow-2xl rounded-3xl pt-16 pb-4 px-6 flex flex-col items-center relative overflow-visible">
+                <Card className="w-full h-full bg-white/10 backdrop-blur-lg border-2 border-white/10 shadow-2xl rounded-3xl pt-16 pb-6 px-4 sm:px-6 flex flex-col items-center relative overflow-visible">
                   {/* Animated Icon with Gradient Glow */}
                   <div className={`relative mb-4 w-20 h-20 flex items-center justify-center rounded-full bg-gradient-to-br ${gradient} shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                     <motion.div
@@ -99,10 +99,10 @@ const SponsorTiers: React.FC<SponsorTiersProps> = ({ tiers }) => (
                     <CardTitle className={`text-lg md:text-xl font-extrabold text-center ${isFeatured ? 'text-tart-mint drop-shadow-tart-mint' : ''}`} style={{ color: isFeatured ? tier.color : undefined }}>{tier.name}</CardTitle>
                   </CardHeader>
                   <CardContent className="w-full flex-1 flex flex-col items-center justify-center pt-0">
-                    <p className="text-gray-100 mb-4 text-center min-h-[48px] text-base md:text-lg font-medium">
+                    <p className="text-gray-100 mb-4 text-center min-h-[48px] text-sm sm:text-base font-medium px-1">
                       {tier.description}
                     </p>
-                    <ul className="text-sm md:text-base text-gray-200 list-disc list-inside mb-4 space-y-1 w-full">
+                    <ul className="text-xs sm:text-sm text-gray-200 list-disc list-inside mb-4 space-y-1 w-full max-w-[90%] mx-auto">
                       {tier.benefits.map((benefit, idx) => (
                         <li key={idx} className="relative group w-fit mx-auto">
                           <Tooltip>
