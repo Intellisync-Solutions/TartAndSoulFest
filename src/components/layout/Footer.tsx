@@ -1,4 +1,4 @@
-import { MapPin, Mail, Phone, Facebook, Instagram, Twitter, Music2 } from 'lucide-react';
+import { MapPin, Music2, Mail,Phone, Facebook, Linkedin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -14,14 +14,21 @@ const Footer = () => {
               Celebrating Black culture through food, music, and community.
             </p>
             <div className="flex space-x-4 mt-6">
-              <a href="#" className="text-gray-300 hover:text-[#00A89F] transition-colors">
+              <a 
+                href="https://www.facebook.com/profile.php?id=61564579073138" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#00A89F] transition-colors"
+              >
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-[#00A89F] transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-gray-300 hover:text-[#00A89F] transition-colors">
-                <Twitter size={20} />
+              <a 
+                href="https://www.linkedin.com/in/robbinsdouglas/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#00A89F] transition-colors"
+              >
+                <Linkedin size={20} />
               </a>
             </div>
           </div>
@@ -57,7 +64,7 @@ const Footer = () => {
             <div className="space-y-2">
               <a href="/about" className="block text-gray-300 hover:text-[#00A89F] transition-colors">About Us</a>
               <a href="/events" className="block text-gray-300 hover:text-[#00A89F] transition-colors">Events</a>
-              <a href="/blog" className="block text-gray-300 hover:text-[#00A89F] transition-colors">Blog</a>
+              {/* <a href="/blog" className="block text-gray-300 hover:text-[#00A89F] transition-colors">Blog</a> For Future Use */}
               <a href="/sponsors" className="block text-gray-300 hover:text-[#00A89F] transition-colors">Sponsors</a>
             </div>
           </div>
