@@ -10,7 +10,7 @@ import HistoryMilestones from '../components/sections/HistoryMilestones';
 import FounderStory from '../components/sections/FounderStory';
 import LookingForward from '../components/sections/LookingForward';
 
-import { BookOpen, Users, Flag, Cake, Music, Heart, Award, GalleryHorizontalEnd } from "lucide-react";
+import { BookOpen, Users, Flag, Cake, Heart, Award, GalleryHorizontalEnd } from "lucide-react";
 
 const HIGHLIGHTS = [
   {
@@ -137,37 +137,37 @@ const GALLERY_ITEMS = [
   {
     image: "placeholder-image", // Placeholder until image is available
     title: "First Tart & Soul Festival",
-    year: "2020",
+    year: "2025",
     category: "Events"
   },
   {
     image: "placeholder-image", // Placeholder until image is available
     title: "Founder with Award-Winning Tart",
-    year: "2021",
+    year: "2025",
     category: "People"
   },
   {
     image: "placeholder-image", // Placeholder until image is available
     title: "Community Soul Food Dinner",
-    year: "2022",
+    year: "2025",
     category: "Food"
   },
   {
     image: "placeholder-image", // Placeholder until image is available
     title: "Live Music Performance",
-    year: "2022",
+    year: "2025",
     category: "Music"
   },
   {
     image: "placeholder-image", // Placeholder until image is available
     title: "Tart Making Workshop",
-    year: "2023",
+    year: "2025",
     category: "Events"
   },
   {
     image: "placeholder-image", // Placeholder until image is available
     title: "Cultural Heritage Celebration",
-    year: "2023",
+    year: "2025",
     category: "Culture"
   }
 ];
