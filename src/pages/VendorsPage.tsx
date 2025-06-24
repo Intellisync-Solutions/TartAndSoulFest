@@ -23,7 +23,7 @@ interface TartVariety {
 }
 
 interface Vendor {
-  id: number;
+  id: string;
   name: string;
   image: string;
   logo?: string;
@@ -32,10 +32,10 @@ interface Vendor {
   established: string;
   specialties: string[];
   hours?: string;
-  tarts: TartVariety[];
-  story: string;
+  tarts?: TartVariety[];
+  story?: string;
   awards?: string[];
-  website: string;
+  website?: string;
   phone?: string;
   email?: string;
 }
@@ -53,147 +53,249 @@ interface Vendor {
 // Sample vendor data with enhanced structure
 const ALL_VENDORS: Vendor[] = [
   {
-    id: 1,
-    name: "Sweet Heritage Bakery",
+    id: "auntieAldooKitchen",
+    name: "Auntie Aldoo's Kitchen",
     image: "placeholder-vendor-image", // 🔜 Replace with: image: sweetHeritageImage
     logo: "placeholder-vendor-logo",   // 🔜 Replace with: logo: sweetHeritageLogo
     description: "Crafting traditional butter tarts with a soul food twist since 1985.",
-    location: "Downtown Chatham-Kent",
-    established: "1985",
+    location: "Cottam",
+    established: "",
     specialties: ["Classic Butter Tart", "Soul Food Fusion", "Vegan Options"],
-    hours: "Tue-Sat: 7AM-6PM",
-    tarts: [
-      {
-        name: "Classic Soul Butter Tart",
-        description: "Our signature butter tart with a hint of bourbon vanilla",
-        price: "$3.95",
-        isSignature: true,
-      },
-      {
-        name: "Sweet Potato Butter Tart",
-        description: "A soul food inspired twist on the classic",
-        price: "$4.25",
-      },
-      {
-        name: "Pecan Praline Butter Tart",
-        description: "Southern comfort meets Canadian tradition",
-        price: "$4.50",
-      }
-    ],
-    story: "Founded by Grandma Rose in 1985, Sweet Heritage Bakery bridges cultural traditions through the art of baking. Our butter tarts use a secret family recipe that marries Canadian techniques with soul food influences. Each tart is crafted with locally sourced ingredients and time-honored methods passed down through generations, creating a unique fusion that celebrates our diverse culinary heritage.",
-    awards: [
-      "Best Butter Tart - Chatham-Kent Food Festival 2023",
-      "Heritage Award - Ontario Culinary Association 2022",
-      "Community Choice Award - Soul Food Festival 2023"
-    ],
-    website: "https://example.com",
-    phone: "(555) 123-4567",
-    email: "info@sweetheritage.com"
+    hours: "",
+    // tarts: [
+    //   {
+    //     name: "Classic Soul Butter Tart",
+    //     description: "Our signature butter tart with a hint of bourbon vanilla",
+    //     price: "$3.95",
+    //     isSignature: true,
+    //   },
+    //   {
+    //     name: "Sweet Potato Butter Tart",
+    //     description: "A soul food inspired twist on the classic",
+    //     price: "$4.25",
+    //   },
+    //   {
+    //     name: "Pecan Praline Butter Tart",
+    //     description: "Southern comfort meets Canadian tradition",
+    //     price: "$4.50",
+    //   }
+    // ],
+    // story: "Founded by Grandma Rose in 1985, Sweet Heritage Bakery bridges cultural traditions through the art of baking. Our butter tarts use a secret family recipe that marries Canadian techniques with soul food influences. Each tart is crafted with locally sourced ingredients and time-honored methods passed down through generations, creating a unique fusion that celebrates our diverse culinary heritage.",
+    // awards: [
+    //   "Best Butter Tart - Chatham-Kent Food Festival 2023",
+    //   "Heritage Award - Ontario Culinary Association 2022",
+    //   "Community Choice Award - Soul Food Festival 2023"
+    // ],
+    // website: "https://example.com",
+    // phone: "(555) 123-4567",
+    // email: "info@sweetheritage.com"
   },
   {
-    id: 2,
-    name: "Tart & Soul Kitchen",
+    id: "bentTinBakedGoods",
+    name: "Bent Tin Baked Goods",
     image: "placeholder-vendor-image", // 🔜 Replace with: image: tartSoulKitchenImage
     logo: "placeholder-vendor-logo",   // 🔜 Replace with: logo: tartSoulKitchenLogo
     description: "Where modern innovation meets traditional butter tart crafting.",
-    location: "East Chatham",
-    established: "2010",
+    location: "Thamesville",
+    established: "",
     specialties: ["Artisanal Tarts", "Seasonal Flavors", "Custom Orders"],
-    hours: "Mon-Sat: 8AM-7PM, Sun: 9AM-3PM",
-    tarts: [
-      {
-        name: "Maple Bourbon Butter Tart",
-        description: "Rich maple syrup and premium bourbon",
-        price: "$4.50",
-        isSignature: true,
-      },
-      {
-        name: "Chocolate Soul Tart",
-        description: "Dark chocolate meets butter tart perfection",
-        price: "$4.25",
-      },
-      {
-        name: "Cinnamon Spice Butter Tart",
-        description: "Warm spices with a caramelized crust",
-        price: "$4.00",
-      }
-    ],
-    story: "Started by Chef James Wilson, Tart & Soul Kitchen combines professional pastry techniques with home-style comfort. Each tart is handcrafted with locally sourced ingredients. Chef James draws inspiration from his grandmother's Southern cooking, infusing traditional Canadian butter tarts with the soulful flavors of his heritage. Our small-batch approach ensures quality and consistency in every delicious bite.",
-    awards: [
-      "Rising Star Award - Ontario Baking Association 2022",
-      "Innovation Excellence - Food & Drink Magazine 2023"
-    ],
-    website: "https://example.com",
-    phone: "(555) 987-6543",
-    email: "hello@tartandsoulkitchen.com"
+    hours: "",
+    // tarts: [
+    //   {
+    //     name: "Maple Bourbon Butter Tart",
+    //     description: "Rich maple syrup and premium bourbon",
+    //     price: "$4.50",
+    //     isSignature: true,
+    //   },
+    //   {
+    //     name: "Chocolate Soul Tart",
+    //     description: "Dark chocolate meets butter tart perfection",
+    //     price: "$4.25",
+    //   },
+    //   {
+    //     name: "Cinnamon Spice Butter Tart",
+    //     description: "Warm spices with a caramelized crust",
+    //     price: "$4.00",
+    //   }
+    // ],
+    // story: "Started by Chef James Wilson, Tart & Soul Kitchen combines professional pastry techniques with home-style comfort. Each tart is handcrafted with locally sourced ingredients. Chef James draws inspiration from his grandmother's Southern cooking, infusing traditional Canadian butter tarts with the soulful flavors of his heritage. Our small-batch approach ensures quality and consistency in every delicious bite.",
+    // awards: [
+    //   "Rising Star Award - Ontario Baking Association 2022",
+    //   "Innovation Excellence - Food & Drink Magazine 2023"
+    // ],
+    // website: "https://example.com",
+    // phone: "(555) 987-6543",
+    // email: "hello@tartandsoulkitchen.com"
   },
   {
-    id: 3,
-    name: "Southern Sweet Spot",
+    id: "bombBishBakery",
+    name: "Bomb Bish Bakery",
     image: "placeholder-vendor-image", // 🔜 Replace with: image: southernSweetsImage
     logo: "placeholder-vendor-logo",   // 🔜 Replace with: logo: southernSweetsLogo
     description: "Authentic Southern-inspired desserts with a Canadian twist.",
-    location: "North Chatham",
-    established: "2015",
+    location: "Welland",
+    established: "",
     specialties: ["Southern Flavors", "Gluten-Free Options", "Mini Tarts"],
-    hours: "Wed-Sun: 10AM-6PM",
-    tarts: [
-      {
-        name: "Georgia Peach Butter Tart",
-        description: "Fresh peaches in a traditional butter tart base",
-        price: "$4.75",
-        isSignature: true,
-      },
-      {
-        name: "Sweet Potato Pie Tart",
-        description: "Southern classic reimagined as a butter tart",
-        price: "$4.50",
-      },
-      {
-        name: "Classic Butter Tart",
-        description: "Traditional recipe with premium ingredients",
-        price: "$3.95",
-      }
-    ],
-    story: "Southern Sweet Spot was born from a passion for bringing together the best of Southern dessert traditions with the iconic Canadian butter tart. Owner Melissa Thomas moved to Chatham-Kent from Georgia and fell in love with butter tarts, seeing an opportunity to blend her Southern baking heritage with this Canadian classic. Each recipe is developed through countless tastings and refinements to achieve the perfect balance of flavors.",
-    website: "https://example.com"
+    hours: "",
+    // tarts: [
+    //   {
+    //     name: "Georgia Peach Butter Tart",
+    //     description: "Fresh peaches in a traditional butter tart base",
+    //     price: "$4.75",
+    //     isSignature: true,
+    //   },
+    //   {
+    //     name: "Sweet Potato Pie Tart",
+    //     description: "Southern classic reimagined as a butter tart",
+    //     price: "$4.50",
+    //   },
+    //   {
+    //     name: "Classic Butter Tart",
+    //     description: "Traditional recipe with premium ingredients",
+    //     price: "$3.95",
+    //   }
+    // ],
+    // story: "Southern Sweet Spot was born from a passion for bringing together the best of Southern dessert traditions with the iconic Canadian butter tart. Owner Melissa Thomas moved to Chatham-Kent from Georgia and fell in love with butter tarts, seeing an opportunity to blend her Southern baking heritage with this Canadian classic. Each recipe is developed through countless tastings and refinements to achieve the perfect balance of flavors.",
+    // website: "https://example.com"
   },
   {
-    id: 4,
-    name: "Blues & Berries Bakery",
+    id: "brunosBakeryAndCafe",
+    name: "Brunos Bakery & Cafe",
     image: "placeholder-vendor-image", // 🔜 Replace with: image: bluesBerriesImage
     logo: "placeholder-vendor-logo",   // 🔜 Replace with: logo: bluesBerriesLogo
     description: "Berry-infused butter tarts with a musical twist.",
-    location: "West Chatham",
-    established: "2018",
+    location: "Innisfil",
+    established: "",
     specialties: ["Berry Tarts", "Music-Themed Desserts", "Organic Ingredients"],
-    hours: "Thu-Mon: 9AM-8PM",
-    tarts: [
-      {
-        name: "Blueberry Blues Tart",
-        description: "Wild blueberries with a touch of lemon zest",
-        price: "$4.95",
-        isSignature: true,
-      },
-      {
-        name: "Raspberry Rhythm Tart",
-        description: "Tart raspberries with white chocolate undertones",
-        price: "$4.95",
-      },
-      {
-        name: "Soul Berry Medley",
-        description: "Mixed berry butter tart with a brown sugar crust",
-        price: "$5.25",
-      }
-    ],
-    story: "Blues & Berries combines owner Marcus Johnson's love of music and baking. A former blues musician, Marcus found parallels between creating the perfect melody and the perfect tart. Each of our creations is named after a musical style or famous song, celebrating the harmony between food and music. We source organic berries from local farms and focus on sustainable practices in everything we do.",
-    awards: [
-      "Best New Bakery - Chatham Business Awards 2019",
-      "Sustainability Champion - Green Eating Magazine 2022"
-    ],
-    website: "https://example.com",
-    phone: "(555) 789-0123",
-    email: "orders@bluesandberries.com"
+    hours: "",
+    // tarts: [
+    //   {
+    //     name: "Blueberry Blues Tart",
+    //     description: "Wild blueberries with a touch of lemon zest",
+    //     price: "$4.95",
+    //     isSignature: true,
+    //   },
+    //   {
+    //     name: "Raspberry Rhythm Tart",
+    //     description: "Tart raspberries with white chocolate undertones",
+    //     price: "$4.95",
+    //   },
+    //   {
+    //     name: "Soul Berry Medley",
+    //     description: "Mixed berry butter tart with a brown sugar crust",
+    //     price: "$5.25",
+    //   }
+    // ],
+    // story: "Blues & Berries combines owner Marcus Johnson's love of music and baking. A former blues musician, Marcus found parallels between creating the perfect melody and the perfect tart. Each of our creations is named after a musical style or famous song, celebrating the harmony between food and music. We source organic berries from local farms and focus on sustainable practices in everything we do.",
+    // awards: [
+    //   "",
+    //   ""
+    // ],
+    // website: "https://example.com",
+    // phone: "",
+    // email: ""
+  },
+  {
+    id: "butteryBitchyHomeBakery",
+    name: "Buttery Bitchy Home Bakery",
+    image: "placeholder-vendor-image",
+    logo: "placeholder-vendor-logo",
+    description: "",
+    location: "Goderich",
+    established: "",
+    specialties: [""],
+    hours: "",
+    tarts: [],
+    story: "",
+    awards: [],
+    website: "",
+    phone: "",
+    email: ""
+  },
+  {
+    id: "dattolosBakedGoods",
+    name: "Dattolo's Baked Goods",
+    image: "placeholder-vendor-image",
+    logo: "placeholder-vendor-logo",
+    description: "",
+    location: "Sarnia",
+    established: "",
+    specialties: [""],
+    hours: "",
+    tarts: [],
+    story: "",
+    awards: [],
+    website: "",
+    phone: "",
+    email: ""
+  },
+  {
+    id: "lumbersnacksBakeHouse",
+    name: "Lumber Snacks Bake House",
+    image: "placeholder-vendor-image",
+    logo: "placeholder-vendor-logo",
+    description: "",
+    location: "Erin",
+    established: "",
+    specialties: [""],
+    hours: "",
+    tarts: [],
+    story: "",
+    awards: [],
+    website: "",
+    phone: "",
+    email: ""
+  },
+  {
+    id: "mammaAndMeGlutenFree",
+    name: "Mamma & Me Gluten Free",
+    image: "placeholder-vendor-image",
+    logo: "placeholder-vendor-logo",
+    description: "",
+    location: "London",
+    established: "",
+    specialties: [""],
+    hours: "",
+    tarts: [],
+    story: "",
+    awards: [],
+    website: "",
+    phone: "",
+    email: ""
+  },
+  {
+    id: "omisSweetnTreats",
+    name: "Omis Sweetn Treats",
+    image: "placeholder-vendor-image",
+    logo: "placeholder-vendor-logo",
+    description: "",
+    location: "Etobicoke",
+    established: "",
+    specialties: [""],
+    hours: "",
+    tarts: [],
+    story: "",
+    awards: [],
+    website: "",
+    phone: "",
+    email: ""
+  },
+  {
+    id: "zuleEats",
+    name: "Zule Eats",
+    image: "placeholder-vendor-image",
+    logo: "placeholder-vendor-logo",
+    description: "",
+    location: "Windsor",
+    established: "",
+    specialties: [""],
+    hours: "",
+    tarts: [],
+    story: "",
+    awards: [],
+    website: "",
+    phone: "",
+    email: ""
   }
 ];
 
@@ -214,10 +316,14 @@ const SPECIALTY_OPTIONS = [
 
 // Available locations for filtering
 const LOCATION_OPTIONS = [
-  { label: "Downtown", value: "Downtown Chatham-Kent" },
-  { label: "East", value: "East Chatham" },
-  { label: "North", value: "North Chatham" },
-  { label: "West", value: "West Chatham" },
+  { label: "Chatham", value: "Chatham-Kent" },
+  { label: "Etobicoke", value: "Etobicoke" },
+  { label: "London", value: "London" },
+  { label: "Windsor", value: "Windsor" },
+  { label: "Welland", value: "Welland" }, 
+  { label: "Sarnia", value: "Sarnia" },
+  { label: "Erin", value: "Erin" },
+  { label: "Goderich", value: "Goderich" },
 ];
 
 const ITEMS_PER_PAGE = 5;
@@ -232,8 +338,8 @@ const VendorsPage = () => {
   const [loading, setLoading] = useState(false);
   
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedVendor, setSelectedVendor] = useState<number | null>(null);
-  const [spotlightVendor, setSpotlightVendor] = useState<number | null>(null);
+  const [selectedVendor, setSelectedVendor] = useState<string | null>(null);
+  const [spotlightVendor, setSpotlightVendor] = useState<string | null>(null);
 
   // Filter states
   const [selectedSpecialties, setSelectedSpecialties] = useState<string[]>([]);
@@ -323,7 +429,7 @@ const VendorsPage = () => {
   
 
   // Handle card expansion and spotlight
-  const toggleVendorExpansion = (vendorId: number) => {
+  const toggleVendorExpansion = (vendorId: string) => {
     // If clicking on the currently selected vendor, close it
     if (selectedVendor === vendorId) {
       setSelectedVendor(null);

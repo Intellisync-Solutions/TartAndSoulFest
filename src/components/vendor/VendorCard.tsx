@@ -12,7 +12,7 @@ interface TartVariety {
 
 interface VendorCardProps {
   vendor: {
-    id: number;
+    id: string;
     name: string;
     image: string;
     logo?: string;
@@ -20,10 +20,10 @@ interface VendorCardProps {
     location: string;
     established: string;
     specialties: string[];
-    tarts: TartVariety[];
-    story: string;
+    tarts?: TartVariety[];
+    story?: string;
     awards?: string[];
-    website: string;
+    website?: string;
     hours?: string;
   };
   onClick: () => void;
@@ -136,9 +136,9 @@ const VendorCard: React.FC<VendorCardProps> = ({
               </div>
               
               {/* Featured Tart Highlight */}
-              {vendor.tarts.length > 0 && vendor.tarts.some(tart => tart.isSignature) && (
+              {vendor.tarts && vendor.tarts.length > 0 && vendor.tarts.some(tart => tart.isSignature) && (
                 <div className="bg-gradient-to-r from-[#1F1413] via-[#2E1F1F] to-[#1F1413] p-4 rounded-xl mb-6">
-                  {vendor.tarts.filter(tart => tart.isSignature).slice(0, 1).map((tart, index) => (
+                  {vendor.tarts.filter(tart => tart?.isSignature).slice(0, 1).map((tart, index) => (
                     <div key={index} className="flex justify-between items-center">
                       <div className="flex-1">
                         <div className="flex items-center">

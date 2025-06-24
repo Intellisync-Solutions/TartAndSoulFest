@@ -93,7 +93,7 @@ const VendorStats: React.FC = () => {
           </GradientText>
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto">
-          Discover the artisans behind Chatham-Kent's finest butter tarts, each bringing their unique soul-inspired twist to this Canadian classic.
+          Discover the tartisan behind Chatham-Kent's finest butter tarts, each bringing their unique soul-inspired twist to this Canadian classic.
         </p>
       </div>
       

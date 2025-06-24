@@ -19,7 +19,7 @@ interface TartVariety {
 
 interface VendorSpotlightProps {
   vendor: {
-    id: number;
+    id: string;
     name: string;
     image: string;
     logo?: string;
@@ -28,10 +28,17 @@ interface VendorSpotlightProps {
     established: string;
     hours?: string;
     specialties: string[];
-    tarts: TartVariety[];
-    story: string;
+    tarts?: Array<{
+      name: string;
+      description: string;
+      price: string;
+      isSignature?: boolean;
+      image?: string;
+      ingredients?: string[];
+    }>;
+    story?: string;
     awards?: string[];
-    website: string;
+    website?: string;
     phone?: string;
     email?: string;
     featuredImages?: TartImage[];
@@ -163,62 +170,63 @@ const VendorSpotlight: React.FC<VendorSpotlightProps> = ({ vendor, isActive }) =
           
           {/* Middle & Right Column - Tarts & Visuals */}
           <div className="lg:col-span-2 order-1 lg:order-2">
-            <h3 className="text-xl font-bold mb-4 flex items-center">
-              <CakeSlice className="mr-2 text-[#00A89F]" />
-              Signature Tarts
+            <h3 className="text-xl font-bold text-white mb-4 flex items-center">
+              <CakeSlice size={20} className="mr-2 text-[#00A89F]" />
+              {vendor.tarts?.length ? 'Signature Tarts' : 'No Tarts Available'}
             </h3>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {vendor.tarts.map((tart) => (
-                <motion.div
-                  key={tart.name}
-                  className="bg-gradient-to-br from-[#2E1F1F] to-[#3A2C2C] p-0.5 rounded-xl overflow-hidden group"
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  transition={{ type: "spring", stiffness: 300, damping: 15 }}
-                >
-                  <div className="bg-[#4d3331] p-4 rounded-xl h-full flex flex-col">
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="font-bold text-white flex items-center">
-                        {tart.name}
-                        {tart.isSignature && (
-                          <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-[#FFA600]/20 text-[#FFA600]">
-                            <Star size={10} className="mr-1" />
-                            Signature
-                          </span>
-                        )}
-                      </h4>
-                      <motion.button
-                        whileHover={{ scale: 1.2 }}
-                        whileTap={{ scale: 0.9 }}
-                        onClick={() => toggleLike(tart.name)}
-                        className="text-gray-400 hover:text-[#00A89F] transition-colors"
-                      >
-                        <Heart 
-                          size={18} 
-                          className={likedTarts.has(tart.name) ? "fill-[#00A89F] text-[#00A89F]" : ""} 
-                        />
-                      </motion.button>
-                    </div>
-                    <p className="text-gray-400 text-sm flex-grow">{tart.description}</p>
-                    <div className="flex justify-between items-center mt-3">
-                      <span className="font-bold text-[#00A89F]">{tart.price}</span>
-                      <div className="inline-block bg-[#FFA600]/20 text-[#FFA600] px-3 py-1 rounded-full text-sm font-medium mr-2">
-                        Coming Soon
+            {vendor.tarts && vendor.tarts.length > 0 && (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+                {vendor.tarts.map((tart) => (
+                  <motion.div
+                    key={tart.name}
+                    className="bg-gradient-to-br from-[#2E1F1F] to-[#3A2C2C] p-0.5 rounded-xl overflow-hidden group"
+                    whileHover={{ y: -5, scale: 1.02 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 15 }}
+                  >
+                    <div className="bg-[#4d3331] p-4 rounded-xl h-full flex flex-col">
+                      <div className="flex justify-between items-start mb-2">
+                        <h4 className="font-bold text-white flex items-center">
+                          {tart.name}
+                          {tart.isSignature && (
+                            <span className="ml-2 inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-[#FFA600]/20 text-[#FFA600]">
+                              <Star size={10} className="mr-1" />
+                              Signature
+                            </span>
+                          )}
+                        </h4>
+                        <motion.button
+                          whileHover={{ scale: 1.2 }}
+                          whileTap={{ scale: 0.9 }}
+                          onClick={() => toggleLike(tart.name)}
+                          className="text-gray-400 hover:text-[#00A89F] transition-colors"
+                        >
+                          <Heart 
+                            size={18} 
+                            className={likedTarts.has(tart.name) ? "fill-[#00A89F] text-[#00A89F]" : ""} 
+                          />
+                        </motion.button>
                       </div>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        onClick={() => setSelectedTart(tart)}
-                        className="text-xs bg-[#514040] hover:bg-[#00A89F] text-[#00A89F] hover:text-[#1F1413] px-3 py-1 rounded-full transition-colors flex items-center"
-                      >
-                        Details
-                        <ArrowRight size={12} className="ml-1" />
-                      </motion.button>
+                      <p className="text-gray-400 text-sm flex-grow">{tart.description}</p>
+                      <div className="flex justify-between items-center mt-3">
+                        <span className="font-bold text-[#00A89F]">{tart.price}</span>
+                        <div className="inline-block bg-[#FFA600]/20 text-[#FFA600] px-3 py-1 rounded-full text-sm font-medium mr-2">
+                          Coming Soon
+                        </div>
+                        <motion.button
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                          onClick={() => setSelectedTart(tart)}
+                          className="text-xs bg-[#514040] hover:bg-[#00A89F] text-[#00A89F] hover:text-[#1F1413] px-3 py-1 rounded-full transition-colors flex items-center"
+                        >
+                          Details
+                          <ArrowRight size={12} className="ml-1" />
+                        </motion.button>
+                      </div>
                     </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+                  </motion.div>
+                ))}
+              </div>
+            )}
             
             {/* Featured Images or Carousel could go here */}
             {vendor.featuredImages && vendor.featuredImages.length > 0 && (
