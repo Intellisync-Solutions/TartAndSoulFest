@@ -9,7 +9,7 @@ const Events = () => {
   const events = [
     {
       title: 'Tart & Soul Festival',
-      date: 'June 28, 2025',
+      date: 'June 28, 2026',
       time: '11:00 AM - 11:00 PM',
       location: 'Sons of Kent',
       music: (

@@ -97,7 +97,7 @@ const TESTIMONIALS = [
 // Next event data
 const NEXT_EVENT = {
   name: "Tart & Soul Festival",
-  date: "2025-06-28T11:00:00",
+  date: "2026-06-28T11:00:00",
   location: "Sons of Kent",
   description: "Join us for our signature event celebrating Soul Food, Soul Music, and Butter Tarts."
 };
