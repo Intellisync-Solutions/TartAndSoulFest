@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Import local images - commented out until images are available
-// import firstGathering from '../../assets/images/first-gathering.jpeg';
-// import soulFoodLaunch from '../../assets/images/soul-food-launch.jpeg';
-// import tartCompetition from '../../assets/images/tart-competition.jpeg';
-// import communityCelebration from '../../assets/images/community-celebration.jpeg';
+
 
 interface MediaItem {
   type: 'image' | 'video';

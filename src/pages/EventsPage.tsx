@@ -19,6 +19,15 @@ interface MediaItem {
 // TODO: Swap these placeholders for your actual media imports once added to the assets folder.
 import TartSoulFest1 from '../assets/images/TartSoulFest1.png';
 import TartSoulFest2 from '../assets/images/TartSoulFest2.png';
+import JudgesAward from "../assets/images/Tart&SoulPictures/JudgesAward.jpg";
+import TartandSoul2 from '../assets/images/Tart&SoulPictures/Tart and Soul 2.jpg';
+import TartandSoul3 from '../assets/images/Tart&SoulPictures/Tart and Soul 3.jpg';
+import TartandSoul4 from '../assets/images/Tart&SoulPictures/Tart and Soul 4.jpg';
+import TartandSoul5 from '../assets/images/Tart&SoulPictures/Tart and Soul 5.jpg';
+import TartandSoul6 from '../assets/images/Tart&SoulPictures/Tart and Soul 6.jpg';
+import TartandSoul7 from '../assets/images/Tart&SoulPictures/Tart and Soul 7.jpg';
+import TartandSoul8 from '../assets/images/Tart&SoulPictures/Tart and Soul 8.jpg';
+import TartandSoul9 from '../assets/images/Tart&SoulPictures/Tart and Soul 9.jpg';
 import SoulParkPerformance from '../assets/video/Soulful Park Performance.mp4';
 import SoulfulTartCelebration from '../assets/video/Soulful Tart Celebration.mp4';
 
@@ -30,7 +39,7 @@ const mediaItems: MediaItem[] = [
     thumbnail: TartSoulFest1,
     title: "Tart & Soul Fest",
     description: "A vibrant crowd enjoying the Tart & Soul Festival.",
-    year: "2024",
+    year: "2025",
   },
 
   {
@@ -39,7 +48,7 @@ const mediaItems: MediaItem[] = [
     thumbnail: SoulParkPerformance,
     title: "Soul Park Performance",
     description: "Short highlights from last year’s event.",
-    year: "2024",
+    year: "2025",
   },
  
   {
@@ -48,7 +57,7 @@ const mediaItems: MediaItem[] = [
     thumbnail: TartSoulFest2,
     title: "Tart & Soul Fest",
     description: "Signature moment from Tart & Soul Festival.",
-    year: "2024",
+    year: "2025",
   },
 
   {
@@ -57,7 +66,88 @@ const mediaItems: MediaItem[] = [
     thumbnail: SoulfulTartCelebration,
     title: "Soulful Tart Celebration",
     description: "Short highlights from last year’s event.",
-    year: "2024",
+    year: "2025",
+  },
+
+  {
+    type: "image",
+    url: JudgesAward,
+    thumbnail: JudgesAward,
+    title: "Judges Award",
+    description: "Signature moment from Tart & Soul Festival.",
+    year: "2025",
+  },
+
+  {
+    type: "image",
+    url: TartandSoul2,
+    thumbnail: TartandSoul2,
+    title: "Tart & Soul Fest",
+    description: "Signature moment from Tart & Soul Festival.",
+    year: "2025",
+  },
+
+  {
+    type: "image",
+    url: TartandSoul3,
+    thumbnail: TartandSoul3,
+    title: "Tart & Soul Fest",
+    description: "Signature moment from Tart & Soul Festival.",
+    year: "2025",
+  },
+
+  {
+    type: "image",
+    url: TartandSoul4,
+    thumbnail: TartandSoul4,
+    title: "Tart & Soul Fest",
+    description: "Signature moment from Tart & Soul Festival.",
+    year: "2025",
+  },
+
+  {
+    type: "image",
+    url: TartandSoul5,
+    thumbnail: TartandSoul5,
+    title: "Tart & Soul Fest",
+    description: "Signature moment from Tart & Soul Festival.",
+    year: "2025",
+  },
+
+  {
+    type: "image",
+    url: TartandSoul6,
+    thumbnail: TartandSoul6,
+    title: "Tart & Soul Fest",
+    description: "Signature moment from Tart & Soul Festival.",
+    year: "2025",
+  },
+
+  {
+    type: "image",
+    url: TartandSoul7,
+    thumbnail: TartandSoul7,
+    title: "Tart & Soul Fest",
+    description: "Signature moment from Tart & Soul Festival.",
+    year: "2025",
+  },
+
+  {
+    type: "image",
+    url: TartandSoul8,
+    thumbnail: TartandSoul8,
+    title: "Tart & Soul Fest",
+    description: "Signature moment from Tart & Soul Festival.",
+    year: "2025",
+  },
+
+  {
+    type: "image",
+    url: TartandSoul9,
+    thumbnail: TartandSoul9,
+    title: "Tart & Soul Fest",
+    description: "Signature moment from Tart & Soul Festival.",
+    year: "2025",
   },
 ];
 
