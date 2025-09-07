@@ -37,7 +37,7 @@ const Footer = () => {
             <div className="space-y-2 text-gray-300">
               <p className="flex items-center space-x-2">
                 <MapPin size={16} />
-                <span> Chatham-Kent</span>
+                <span> 400 Erie St. E. Windsor, On</span>
               </p>
               <p className="flex items-center space-x-2">
                 <Mail size={16} />
