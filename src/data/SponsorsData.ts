@@ -2,15 +2,10 @@
 import { Users, Zap, ShieldCheck, Medal, HandHeart, Crown, Star, Sparkles, Coffee, Gift, } from 'lucide-react';
 import IntellisyncLogo from '../assets/images/logo.png';
 import SonsOfKentLogo from '../assets/images/sonsofkent.png';
-import LPGraphicsLogo from '../assets/images/LPGraphics.png';
+import WindsorTourismLogo from '../assets/images/Windsor-Tourism.png';
 import WTRLogo from '../assets/images/WTR.png';
 import DougTheFoodieLogo from '../assets/images/DougTheFoodie.png';
-import CKSXLogo from '../assets/images/CKSX.webp';
-import PlanetPrintLogo from '../assets/images/PlanetPrint.png';
-import AdanaLawLogo from '../assets/images/AdanaLaw.png';
-import OSWLogo from "../assets/images/OSW.png";
-import CuriousBirdLogo from '../assets/images/CuriousBird.png';
-import retrosuitesLogo from '../assets/images/retrosuites.webp';
+
 
 export const HIGHLIGHTS = [
   { icon: HandHeart, text: "Community Support" },
@@ -115,23 +110,7 @@ export const SPONSORS = [
     contactPerson: '',
     industry: '',
   },
-  {
-    id: 'lpgraphics',
-    name: 'LPGraphics',
-    tier: 'SugarSprinkle',
-    logo: LPGraphicsLogo,
-    description:
-      'Delivering cutting-edge graphic design and printing services that elevate brand identity and creative storytelling.',
-    impact:
-      '',
-    location: 'Chatham, ON',
-    website: '',
-    testimonial: '',
-    yearsSponsor: 1,
-    initiatives: [],
-    contactPerson: '',
-    industry: '',
-  },
+ 
   {
     id: 'doug-the-foodie',
     name: 'Doug the Foodie',
@@ -149,70 +128,19 @@ export const SPONSORS = [
     contactPerson: '',
     industry: '',
   },
-  {
-    id: 'cksx',
-    name: 'CKSX 99.1 FM',
-    tier: 'SugarSprinkle',
-    logo: CKSXLogo,
-    description:
-      'Local radio station supporting community events and spreading the word about Tart & Soul Festival.',
-    impact:
-      'Provided live event coverage and promoted the festival across Chatham-Kent.',
-    location: 'Chatham, ON',
-    website: '',
-    testimonial: '',
-    yearsSponsor: 1,
-    initiatives: [],
-    contactPerson: '',
-    industry: 'Media',
-  },
-  {
-    id: 'planet-print',
-    name: 'Planet Print',
-    tier: 'SugarSprinkle',
-    logo: PlanetPrintLogo,
-    description:
-      'Full-service print shop delivering high-quality materials for community events and businesses.',
-    impact:
-      'Printed banners, posters, and event signage for the festival.',
-    location: 'Chatham, ON',
-    website: '',
-    testimonial: '',
-    yearsSponsor: 1,
-    initiatives: [],
-    contactPerson: '',
-    industry: 'Printing',
+ 
 
-  },
-  {
-    id: 'adana-law',
-    name: 'Adana Law',
-    tier: 'CrustCompanion',
-    logo: AdanaLawLogo,
-    description:
-      'Adana Law is a client-focused legal practice serving Chatham, Windsor, Sarnia, and London, specializing in criminal defence, immigration and refugee law, mental health law, and notary services.',
-    impact:
-      '',
-    location: 'Chatham, ON',
-    website: '',
-    testimonial: '',
-    yearsSponsor: 1,
-    initiatives: [],
-    contactPerson: '',
-    industry: 'Legal',
-
-  },
  
   {
-    id: 'osw',
-    name: 'OSW',
+    id: 'tourism',
+    name: 'Tourism Windsor Essex Pelee Island',
     tier: 'CrustCompanion',
-    logo: OSWLogo,
+    logo: WindsorTourismLogo,
     description:
       'Official Tourism Hub to Southwestern Ontario, providing information and resources for visitors.',
     impact:
       'Supported the festival’s tourism needs and provide tourism information and services.',
-    location: 'Chatham, ON',
+    location: 'Windsor, ON',
     website: '',
     testimonial: '',
     yearsSponsor: 1,
@@ -221,42 +149,8 @@ export const SPONSORS = [
     industry: 'Tourism',
 
   },
-  {
-    id: 'curious-bird',
-    name: 'Curious Bird',
-    tier: 'CrustCompanion',
-    logo: CuriousBirdLogo,
-    description:
-      "A BIPOC endeavour, Curious Bird's the place for candid converstaion, opinion sharing, and culturally enriched experiences from a birds eye view ." ,
-    impact:
-      'Supporting the festival’s community needs and providing a platform for cultural exchange and dialogue.',
-    location: 'Chatham, ON',
-    website: '',
-    testimonial: '',
-    yearsSponsor: 1,
-    initiatives: [],
-    contactPerson: '',
-    industry: 'Community',
-
-  },
-  {
-    id: 'retrosuites',
-    name: 'Retrosuites',
-    tier: 'CrustCompanion',
-    logo: retrosuitesLogo,
-    description:
-      'A boutique hotel and event space offering a unique blend of comfort and style.',
-    impact:
-      '',
-    location: 'Chatham, ON',
-    website: '',
-    testimonial: '',
-    yearsSponsor: 1,
-    initiatives: [],
-    contactPerson: '',
-    industry: 'Community',
-
-  },
+ 
+  
 ];
 
 export const IMPACT_STATISTICS = [

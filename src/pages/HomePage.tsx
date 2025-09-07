@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import ScrollToTopButton from '../components/common/ScrollToTopButton';
 import SEO from '../components/seo/SEO';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Music, Star, Heart, Calendar, MapPin, Clock, Utensils, Users, CakeSlice } from 'lucide-react'; // re-import ArrowRight and ChevronDown when ready to use the "show less/more" button
+import { Music, Star, Heart, Calendar, MapPin, Clock, Utensils, Users, CakeSlice } from 'lucide-react'; 
 
 // Components
 import PageHero from '../components/ui/PageHero';
@@ -97,8 +97,8 @@ const TESTIMONIALS = [
 // Next event data
 const NEXT_EVENT = {
   name: "Tart & Soul Festival",
-  date: "2026-06-28T11:00:00",
-  location: "Sons of Kent",
+  date: "2025-10-05T11:00:00",
+  location: "Windsor Eats",
   description: "Join us for our signature event celebrating Soul Food, Soul Music, and Butter Tarts."
 };
 

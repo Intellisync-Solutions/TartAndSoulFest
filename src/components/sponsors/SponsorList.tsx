@@ -72,7 +72,7 @@ const SponsorList: React.FC<SponsorListProps> = ({ sponsors }) => {
               >
                 {sponsorsToDisplay.map((sponsor) => {
                   // Get the tier info from SPONSOR_TIERS or use a default if not found
-                  const tierKey = Object.entries(SPONSOR_TIERS).find(([_, tier]) => 
+                  const tierKey = Object.entries(SPONSOR_TIERS).find(([_,tier]) => 
                     tier.name.toLowerCase() === sponsor.tier.toLowerCase()
                   )?.[0] || sponsor.tier;
                   

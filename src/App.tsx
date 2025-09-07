@@ -9,7 +9,7 @@ import AboutPage from './pages/AboutPage';
 import EventsPage from './pages/EventsPage';
 import SponsorsPage from './pages/SponsorsPage';
 import HistoryPage from './pages/HistoryPage';
-import VendorsPage from './pages/VendorsPage';
+// import VendorsPage from './pages/VendorsPage';
 import ContactPage from './pages/ContactPage';
 import RecipesPage from './pages/RecipesPage';
 
@@ -27,7 +27,7 @@ function App() {
               <Route path="/events" element={<EventsPage />} />
               <Route path="/sponsors" element={<SponsorsPage />} />
               <Route path="/history" element={<HistoryPage />} />
-              <Route path="/vendors" element={<VendorsPage />} />
+              {/* <Route path="/vendors" element={<VendorsPage />} /> */}
               <Route path="/contact" element={<ContactPage />} />
               <Route path="/recipes" element={<RecipesPage />} />
             </Routes>

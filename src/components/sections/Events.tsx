@@ -1,58 +1,58 @@
 
 import { motion } from 'framer-motion';
 import { Calendar, MapPin, Clock } from 'lucide-react';
-import JourneymenOfSoulImage from '../../assets/images/JourneymenOfSoul.jpg';
+
 import ButterTartSoulImage from '../../assets/images/ButterTartSoul.png';
-import TexasKingImage from '../../assets/images/TexasKing.png';
+
 
 const Events = () => {
   const events = [
     {
       title: 'Tart & Soul Festival',
-      date: 'June 28, 2026',
-      time: '11:00 AM - 11:00 PM',
-      location: 'Sons of Kent',
-      music: (
-        <motion.span
-          whileHover={{ scale: 1.05 }}
-          transition={{ duration: 0.2 }}
-        >
-          Music by:{' '}
-          <motion.a
-            href="https://www.facebook.com/TheJourneymenOfSoul/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{
-              color: "#7FFFD4", // tart-mint accent
-              textShadow: "0px 2px 8px #7FFFD4",
-              scale: 1.12,
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-            className="font-semibold underline underline-offset-4 decoration-tart-mint"
-            style={{ display: "inline-block" }}
-          >
-            Journeyman of Soul
-          </motion.a>
-          {', '}
-          <motion.a
-            href="https://www.texasking.ca/"
-            target="_blank"
-            rel="noopener noreferrer"
-            whileHover={{
-              color: "#7FFFD4", // tart-mint accent
-              textShadow: "0px 2px 8px #7FFFD4",
-              scale: 1.12,
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-            className="font-semibold underline underline-offset-4 decoration-tart-mint"
-            style={{ display: "inline-block" }}
-          >
-            Texas King
-          </motion.a>
-        </motion.span>
-      ),
-      description:
-        'Join us for a day of soul food, music, and community celebration.',
+      date: 'October 5th, 2025',
+      time: '11:00 AM - 3:00 PM',
+      location: '400 Erie St. E. Windsor, On',
+      // music: ( No Band for this event
+      //   <motion.span
+      //     whileHover={{ scale: 1.05 }}
+      //     transition={{ duration: 0.2 }}
+      //   >
+      //     Music by:{' '}
+      //     <motion.a
+      //       href="https://www.facebook.com/TheJourneymenOfSoul/"
+      //       target="_blank"
+      //       rel="noopener noreferrer"
+      //       whileHover={{
+      //         color: "#7FFFD4", // tart-mint accent
+      //         textShadow: "0px 2px 8px #7FFFD4",
+      //         scale: 1.12,
+      //       }}
+      //       transition={{ type: "spring", stiffness: 300, damping: 15 }}
+      //       className="font-semibold underline underline-offset-4 decoration-tart-mint"
+      //       style={{ display: "inline-block" }}
+      //     >
+      //       Journeyman of Soul
+      //     </motion.a>
+      //     {', '}
+      //     <motion.a
+      //       href="https://www.texasking.ca/"
+      //       target="_blank"
+      //       rel="noopener noreferrer"
+      //       whileHover={{
+      //         color: "#7FFFD4", // tart-mint accent
+      //         textShadow: "0px 2px 8px #7FFFD4",
+      //         scale: 1.12,
+      //       }}
+      //       transition={{ type: "spring", stiffness: 300, damping: 15 }}
+      //       className="font-semibold underline underline-offset-4 decoration-tart-mint"
+      //       style={{ display: "inline-block" }}
+      //     >
+      //       Texas King
+      //     </motion.a>
+      //   </motion.span>
+      // ),
+      // description:
+      //   'Join us for a day of soul food, music, and community celebration.',
     },
 
     //For Future Events
@@ -114,8 +114,8 @@ const Events = () => {
                     <span>{event.location}</span>
                   </div>
                 </div>
-                <p className="text-gray-300 mb-4">{event.description}</p>
-                <p className="text-gray-300 mb-4">{event.music}</p>
+                {/* <p className="text-gray-300 mb-4">{event.description}</p>
+                <p className="text-gray-300 mb-4">{event.music}</p> */}
               </motion.div>
             ))}
           </div>
@@ -128,24 +128,24 @@ const Events = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <div className="bg-[#3A2C2C] p-6 rounded-xl shadow-xl flex flex-col md:flex-row items-center justify-center gap-6">
+            {/* <div className="bg-[#3A2C2C] p-6 rounded-xl shadow-xl flex flex-col md:flex-row items-center justify-center gap-6">
               <motion.img 
-                src={JourneymenOfSoulImage} 
-                alt="Journeymen of Soul" 
+                src={""} 
+                alt="" 
                 className="w-full md:w-1/2 h-auto max-h-[320px] object-cover rounded-lg shadow-xl"
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
               />
               <div className="w-full md:w-1/2 flex items-center justify-center bg-[#EFDCC5] p-4 rounded-lg">
                 <motion.img 
-                  src={TexasKingImage} 
-                  alt="Texas King" 
+                  src={""} 
+                  alt="" 
                   className="w-full h-auto max-h-[550px] object-cover rounded-lg shadow-xl"
                   whileHover={{ scale: 1.03 }}
                   transition={{ duration: 0.3 }}
                 />
               </div>
-            </div>
+            </div> */}
           </motion.div>
         </div>
         

@@ -37,7 +37,7 @@ const Footer = () => {
             <div className="space-y-2 text-gray-300">
               <p className="flex items-center space-x-2">
                 <MapPin size={16} />
-                <span>27 Adelaide St South, Chatham-Kent</span>
+                <span> Chatham-Kent</span>
               </p>
               <p className="flex items-center space-x-2">
                 <Mail size={16} />
@@ -56,7 +56,7 @@ const Footer = () => {
           <div>
             <h3 className="text-xl font-bold mb-4">Hours</h3>
             <div className="text-gray-300">
-              <p>Saturday June 28: 11am - 11pm</p>
+              <p>October 5th: 11am - 3pm</p>
             </div>
           </div>
           <div>

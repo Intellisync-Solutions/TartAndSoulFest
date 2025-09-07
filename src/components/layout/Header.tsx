@@ -6,7 +6,7 @@ import {
   Info,
   Calendar,
   Landmark,
-  Store,
+  // Store,
   BookOpen,
   History,
   Mail
@@ -25,7 +25,7 @@ const Header = () => {
     { href: '/about', icon: Info, label: 'About' },
     { href: '/events', icon: Calendar, label: 'Events' },
     { href: '/sponsors', icon: Landmark, label: 'Sponsors' },
-    { href: '/vendors', icon: Store, label: 'Vendors' },
+    // { href: '/vendors', icon: Store, label: 'Vendors' },
     { href: '/recipes', icon: BookOpen, label: 'Recipes' },
     { href: '/history', icon: History, label: 'History' },
     { href: '/contact', icon: Mail, label: 'Contact' },
